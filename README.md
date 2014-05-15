@@ -13,8 +13,8 @@ Arts][]. It has boosted development immensely for the projects [Madek][] and
 [Leihs][].
 
 
-Components
-----------
+Core Components
+---------------
 
 Cider-CI consists of the following components:
 
@@ -32,6 +32,21 @@ Cider-CI consists of the following components:
 The [overview diagram](https://rawgithub.com/DrTom/cider-ci/master/doc/overview.svg)
 illustrates how the components interact.
 
+
+Supplementary Projects 
+----------------------
+
+The *[Cider-CI Ansible Setup][]*
+project provides a way to get easily started with _Cider-CI_. We use it 
+at the _ZHdK_ to mange our _Cider-CI_ environment. 
+
+
+The [Bash Demo Project][] is probably the most simple project that demonstrates
+testing with _Cider-CI_.
+
+
+  [Cider-CI Ansible Setup]: https://github.com/DrTom/cider-ci_ansible-setup
+  [Bash Demo Project]: https://github.com/DrTom/cider-ci_demo-project-bash
 
 License
 -------
