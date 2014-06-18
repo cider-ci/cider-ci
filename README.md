@@ -29,8 +29,7 @@ Cider-CI consists of the following components:
 4.  The [Cider-CI Executor][] repository contains code that runs 
     in the JVM on every executor (node).
 
-The [overview diagram](https://rawgithub.com/DrTom/cider-ci/master/doc/overview.svg)
-illustrates how the components interact.
+The [overview diagram][] illustrates how the components interact.
 
 
 Supplementary Projects 
@@ -45,8 +44,6 @@ The [Bash Demo Project][] is probably the most simple project that demonstrates
 testing with _Cider-CI_.
 
 
-  [Cider-CI Ansible Setup]: https://github.com/DrTom/cider-ci_ansible-setup
-  [Bash Demo Project]: https://github.com/DrTom/cider-ci_demo-project-bash
 
 License
 -------
@@ -65,10 +62,14 @@ Contributing to Cider-CI
 See [contributing](CONTRIBUTING.md). 
 
 
-  [Cider-CI Executor]: https://github.com/DrTom/cider-ci_executor
-  [Cider-CI Server-IM]: https://github.com/DrTom/cider-ci_server-im
-  [Cider-CI Server-TB]: https://github.com/DrTom/cider-ci_server-tb
-  [Cider-CI]: https://github.com/DrTom/cider-ci
+
+
+  [Bash Demo Project]: https://github.com/cider-ci/cider-ci_demo-project-bash
+  [Cider-CI Ansible Setup]: https://github.com/cider-ci/cider-ci_ansible-setup
+  [Cider-CI Executor]: https://github.com/cider-ci/cider-ci_executor
+  [Cider-CI Server-IM]: https://github.com/cider-ci/cider-ci_server-im
+  [Cider-CI Server-TB]: https://github.com/cider-ci/cider-ci_server-tb
+  [Cider-CI]: https://github.com/cider-ci/cider-ci
   [Creative Commons Attribution-ShareAlike 4.0 International Public License]: http://creativecommons.org/licenses/by-sa/4.0/legalcode
   [GNU Affero General Public License Version 3]: http://www.gnu.org/licenses/agpl-3.0.html
   [Immutant]: http://immutant.org/
@@ -76,4 +77,4 @@ See [contributing](CONTRIBUTING.md).
   [Madek]: https://github.com/zhdk/madek
   [TorqueBox]: http://torquebox.org/
   [Zurich University of the Arts]: http://www.zhdk.ch/
-
+  [overview diagram]: https://rawgithub.com/cider-ci/cider-ci/master/doc/overview.svg

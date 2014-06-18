@@ -20,8 +20,10 @@ Contributor Licence Agreement
 -----------------------------
 
 Pull requests will only be considered if you sign a contributor licence
-agreement. It is similar to the ones used for [Neo4J][] or [MongoDB][] for
-example.
+agreement. It is similar to the ones used for [Neo4J][] ([Neo4j CLA][])
+or [MongoDB][] ([10gen CLA][]) for example.
 
+  [10gen CLA]: http://www.mongodb.com/legal/contributor-agreement
+  [Neo4j CLA]: [http://docs.neo4j.org/chunked/milestone/cla.html
   [Neo4J]: http://www.neo4j.org/
   [MongoDB]: http://www.mongodb.org/
