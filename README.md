@@ -12,7 +12,7 @@ the Development Departement at the IT-Center of the [Zurich University of the
 Arts][]. It has boosted development immensely for the projects [Madek][] and
 [Leihs][]. 
 
-The current release number is `1.5.x`. Cider-CI `0.x` was a single
+The current release number is `1.6.x`. Cider-CI `0.x` was a single
 application implemented in *Ruby on Rails* and deployed in
 [Torquebox][]/JBoss, see [architecture v0][]. The application was
 split-up in a *Clojure* and *Ruby on Rails* part in version `1.0.x`.
@@ -43,13 +43,13 @@ Cider-CI consists of the following components respectively services:
     
     This repository also includes functinallity that
     runs as a *Rails* background service. This services is expected to
-    be replaced in version `2.x`, see the [architecture v2 vision][].
+    be replaced in version `2.x`, see the [architecture vision][].
 
 0.  The [Cider-CI Storage-Manger][] serves and stores artifacts like
     build results (e.g. _JVM Jars_, or _Ruby Gems_) or log files of
     a test-run. 
 
-The [architecture v1.5][] overview diagram illustrates how the
+The [architecture][] overview diagram illustrates how the
 components interact.
 
 
@@ -103,5 +103,5 @@ See [contributing](CONTRIBUTING.md).
   [Zurich University of the Arts]: http://www.zhdk.ch/
   [architecture v0]: https://rawgithub.com/cider-ci/cider-ci/master/doc/architecture_v0.svg
   [architecture v1]: https://rawgithub.com/cider-ci/cider-ci/master/doc/architecture_v1.svg
-  [architecture v1.5]: https://rawgithub.com/cider-ci/cider-ci/master/doc/architecture_v1.5.svg
-  [architecture v2 vision]: https://rawgithub.com/cider-ci/cider-ci/master/doc/architecture_v2_vision.svg
+  [architecture]: https://rawgithub.com/cider-ci/cider-ci/master/doc/architecture.svg
+  [architecture vision]: https://rawgithub.com/cider-ci/cider-ci/master/doc/architecture_vision.svg

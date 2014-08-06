@@ -1,0 +1,290 @@
+# 1. merge-in file
+# 2. merge-in predefinition
+
+
+name: Madek
+
+priority: 7
+
+_task_defaults: 
+
+  scripts: 
+    timeout: 180
+    order: 1
+    type: prepare_executor
+    body: 
+      - bundle
+  traits:
+    - linux 
+  environment_variables:
+    TERM: vt100
+
+children: 
+
+  _task_defaults: 
+
+    scripts: 
+      timeout: 180
+      order: 1
+      type: prepare_executor
+      body: 
+        - bundle
+    traits:
+      - linux 
+    environment_variables:
+      TERM: vt100
+
+
+  - name: CI-Meta
+
+    tasks: 
+
+    - name: Show env. vars. 
+      scripts:
+        show_env: 
+          body:
+            - env | sort
+
+  - name: Rails
+    _ci_predefinitions: 
+      traits:
+        - rbenv
+        - ruby-2.1
+        - postgresql
+      environment_variables:
+        RAILS_ENV: test
+      scripts: 
+        bundle:
+          timeout: 500
+          order: 1
+          type: prepare_executor
+          body: 
+            - bundle
+
+children: 
+
+  - name: Rails
+
+    _ci_definitions:
+
+    tasks:
+      - name: t1 
+        scripts:
+          _ci_merge_in_file: 
+            - cider-ci/rails_tasks.yml
+          _ci_merge_in__predefinitions: 
+            - scripts
+          bundle:
+            timeout: 500
+            order: 1
+            type: prepare_executor
+            body: 
+              - bundle
+          configer_db:
+            order: 2
+            body: 
+              - '_ci_substitute_by_file: cider-ci/bin/create_db_config_file.rb'
+          setup_database:
+            order: 3
+            body: 
+              - bundle exec rake db:reset
+          setup_madek:
+            order: 4
+            body: 
+              - bundle exec rake madek:setup:dirs
+          startx:
+            order: 4
+            body: 
+              - tightvncserver ":$XVNC_PORT"  -geometry 1024x768 -rfbport "$XVNC_PORT" -interface 127.0.0.1
+          cucumber:
+            trial-attachments:
+              logs:
+                glob: log/*.log
+                content-type: text/plain
+              screenshots:
+                glob: tmp/capybara/*.png
+                content-type: image/png
+            order: 5
+            body: 
+              - export DISPLAY=":$XVNC_PORT"
+          drop_test_db:
+            order: 8
+            type: post_process
+            body: 
+              - bundle exec rake db:drop
+          stopx:
+            order: 9
+            type: post_process
+            body: 
+              - tightvncserver -kill ":$XVNC_PORT" -clean
+
+
+
+
+    children: 
+    - name: Cucumber 
+      task-defaults:
+       scripts:
+          bundle:
+            timeout: 500
+            order: 1
+            type: prepare_executor
+            body: 
+              - bundle
+          configer_db:
+            order: 2
+            body: cider-ci/bin/create_db_config_file.rb
+          setup_database:
+            order: 3
+            body: 
+              - bundle exec rake db:reset
+          setup_madek:
+            order: 4
+            body: 
+              - bundle exec rake madek:setup:dirs
+          startx:
+            order: 4
+            body: tightvncserver ":$XVNC_PORT"  -geometry 1024x768 -rfbport "$XVNC_PORT" -interface 127.0.0.1
+          cucumber:
+            trial-attachments:
+              logs:
+                glob: log/*.log
+                content-type: text/plain
+              screenshots:
+                glob: tmp/capybara/*.png
+                content-type: image/png
+            order: 5
+            body: 
+              - export DISPLAY=":$XVNC_PORT"
+          drop_test_db:
+            order: 8
+            type: post_process
+            body: 
+              - bundle exec rake db:drop
+          stopx:
+            order: 9
+            type: post_process
+            body: 
+              - tightvncserver -kill ":$XVNC_PORT" -clean
+
+    traits: 
+      - linux
+
+    priority: 7
+
+
+
+children: 
+
+  - name: Meta
+
+    priority: 7
+    tasks:
+    - name: Show environment
+      scripts:
+        main:
+          body: env | sort
+    - name: List working directory
+      scripts:
+        main:
+          body: ls -lah
+    - name: Git log of last commits
+      scripts:
+        main:
+          body: git log -n 3
+
+
+
+
+
+  - name: RSpec
+
+
+
+  - name: Completness of CI tasks
+    priority: 7
+    tasks:
+    - name: All spects are tested?
+      scripts:
+        main:
+          body: cider-ci/bin/all_specs_tested.rb
+    - name: All features are tested?
+      scripts:
+        main:
+          body: cider-ci/bin/all_features_tested.rb
+
+name: Madek
+traits:
+- firefox
+- imagemagick
+- libimage-exiftool-perl
+- linux
+- pg93
+- phantomjs
+- rbenv
+- ruby
+- tightvnc
+attachments:
+  logs:
+    glob: log/*.log
+    content-type: text/plain
+  screenshots:
+    glob: tmp/capybara/*.png
+    content-type: image/png
+environment_variables:
+  TERM: vt100
+  RAILS_ENV: test
+ports:
+  xvnc_port:
+    inet_address: localhost
+    min: 5900
+    max: 5999
+contexts:
+- name: Cucumber
+  priority: 5
+  scripts:
+    bundle:
+      timeout: 500
+      order: 1
+      type: prepare_executor
+      body: bundle
+    configer_db:
+      order: 2
+      body: cider-ci/bin/create_db_config_file.rb
+    setup_database:
+      order: 3
+      body: bundle exec rake db:reset
+    setup_madek:
+      order: 4
+      body: bundle exec rake madek:setup:dirs
+    startx:
+      order: 4
+      body: tightvncserver ":$XVNC_PORT"  -geometry 1024x768 -rfbport "$XVNC_PORT" -interface 127.0.0.1
+    cucumber:
+      order: 5
+      body: export DISPLAY=":$XVNC_PORT"
+    drop_test_db:
+      order: 8
+      type: post_process
+      body: bundle exec rake db:drop
+    stopx:
+      order: 9
+      type: post_process
+      body: tightvncserver -kill ":$XVNC_PORT" -clean
+  tasks:
+  - name: admin_context_groups
+    scripts:
+      cucumber:
+        body: bundle exec cucumber --strict "features/admin_context_groups.feature"
+  - name: admin_contexts
+    scripts:
+      cucumber:
+        body: bundle exec cucumber --strict "features/admin_contexts.feature"
+  - name: admin_copyrights
+    scripts:
+      cucumber:
+        body: bundle exec cucumber --strict "features/admin_copyrights.feature"
+  - name: admin_groups
+    scripts:
+      cucumber:
+        body: bundle exec cucumber --strict "features/admin_groups.feature"
