@@ -12,7 +12,7 @@ the Development Departement at the IT-Center of the [Zurich University of the
 Arts][]. It has boosted development immensely for the projects [Madek][] and
 [Leihs][]. 
 
-The current release number is `1.6.x`. Cider-CI `0.x` was a single
+The current release number is `1.7.x`. Cider-CI `0.x` was a single
 application implemented in *Ruby on Rails* and deployed in
 [Torquebox][]/JBoss, see [architecture v0][]. The application was
 split-up in a *Clojure* and *Ruby on Rails* part in version `1.0.x`.
@@ -48,6 +48,9 @@ Cider-CI consists of the following components respectively services:
 0.  The [Cider-CI Storage-Manger][] serves and stores artifacts like
     build results (e.g. _JVM Jars_, or _Ruby Gems_) or log files of
     a test-run. 
+
+0.  The [Cider-CI API][] is the most recent addition to the Cider-CI
+    stack.
 
 The [architecture][] overview diagram illustrates how the
 components interact.
@@ -86,11 +89,12 @@ See [contributing](CONTRIBUTING.md).
 
 
   [Bash Demo Project]: https://github.com/cider-ci/cider-ci_demo-project-bash
+  [Cider-CI API]: https://github.com/cider-ci/cider-ci_api
   [Cider-CI Ansible Setup]: https://github.com/cider-ci/cider-ci_ansible-setup
   [Cider-CI Executor]: https://github.com/cider-ci/cider-ci_executor
   [Cider-CI Trial-Manager]: https://github.com/cider-ci/cider-ci_trial-manager
-  [Cider-Ci Storage-Manager]: https://github.com/cider-ci/cider-ci_storage-manager
   [Cider-Ci Repository-Manager]: https://github.com/cider-ci/cider-ci_repository-manager
+  [Cider-Ci Storage-Manager]: https://github.com/cider-ci/cider-ci_storage-manager
   [Cider-Ci User-Interface]: https://github.com/cider-ci/cider-ci_user-interface
   [Cider-CI]: https://github.com/cider-ci/cider-ci
   [Creative Commons Attribution-ShareAlike 4.0 International Public License]: http://creativecommons.org/licenses/by-sa/4.0/legalcode
