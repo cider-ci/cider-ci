@@ -12,45 +12,51 @@ the Development Departement at the IT-Center of the [Zurich University of the
 Arts][]. It has boosted development immensely for the projects [Madek][] and
 [Leihs][]. 
 
-The current release number is `1.7.x`. Cider-CI `0.x` was a single
-application implemented in *Ruby on Rails* and deployed in
-[Torquebox][]/JBoss, see [architecture v0][]. The application was
-split-up in a *Clojure* and *Ruby on Rails* part in version `1.0.x`.
-Both applications were still running within the *JBoss Application
-Server*, see [architecture v1][]. Cider-CI moved to a microservice
-architecture with version `1.5.0`. An application server is no longer
-needed. See the [architecture v1.5][] overview diagram.
+The current release is `2.x`. We continues with the microservice
+approach (see [architecture v2][]) and relive the _ruby on rails_ part by
+introducion a new service called *builder*. Version 2 introduces a new
+specification format which breaks compatibility. Hence, the increment of
+the major version.
+
+Cider-CI moved to a microservice architecture with version `1.5.0`. An
+application server is no longer needed.
+
+The application was split-up in a *Clojure* and *Ruby on Rails* part in
+version `1.0.x`. Both applications were still running within the *JBoss
+Application Server*, see [architecture v1][].
+
+Cider-CI `0.x` was a single application implemented in *Ruby on Rails*
+and deployed in [Torquebox][]/JBoss, see [architecture v0][].
 
 Core Components
 ---------------
 
-
 Cider-CI consists of the following components respectively services:
 
-
-0.  The [Cider-CI Trial-Manager][] dispatches so called *trials* (units
+0.  The [Cider-CI Dispatcher][] dispatches so called *trials* (units
     of execution) to the executors and syncs them with the executors.
-    This part runs as a service under the JVM.
 
-0.  The [Cider-CI Executor][] runs in the JVM on every executor (node).
+0.  The [Cider-CI Builder][] translates the execution specification
+    into tasks.
 
-0.  The [Cider-CI Repository-Manager][] manages the git-repositories. It
+0.  The [Cider-CI Repository][] manages the git-repositories. It
     syncs them and provides an interface to other services. 
+
 
 0.  The [Cider-CI User-Interface][] serves the front-end for to users.
     This is a *Ruby on Rails* application wich runs within the *[Puma
     Web Server][]*. 
-    
-    This repository also includes functinallity that
-    runs as a *Rails* background service. This services is expected to
-    be replaced in version `2.x`, see the [architecture vision][].
 
-0.  The [Cider-CI Storage-Manger][] serves and stores artifacts like
+0.  The [Cider-CI Storage][] serves and stores artifacts like
     build results (e.g. _JVM Jars_, or _Ruby Gems_) or log files of
     a test-run. 
 
-0.  The [Cider-CI API][] is the most recent addition to the Cider-CI
-    stack.
+0.  The [Cider-CI API][] provides a json (hal+json precisely) 
+  interface to interact in a programmatic way with Cider-CI.
+    
+
+0.  The [Cider-CI Executor][] runs in the JVM on every executor (node).
+
 
 The [architecture][] overview diagram illustrates how the
 components interact.
@@ -61,18 +67,27 @@ Supplementary Projects
 
 The [Cider-CI][] repository contains documentation and references.
 
-The *[Cider-CI Ansible Setup][]* project helps you to deploy and
+The [Cider-CI Ansible Setup][] project helps you to deploy and
 manager your *Cider-CI* infrastructure. 
 
 The [Bash Demo Project][] is probably the most simple project that demonstrates
 testing with _Cider-CI_.
 
 
+Contributors
+------------
+
+The following people have contributed to this project:
+
+* [Thomas Schank](https://github.com/DrTom/)
+* [Max Albrecht](https://github.com/eins78)
+
 
 License
 -------
 
-The components [Cider-CI Server-TB][], [Cider-CI Server-IM][], and
+The components [Cider-CI API][], [Cider-CI Builder][], [Cider-CI
+Dispatcher][], [Cider-CI Repository][], [Cider-CI Storage][] and
 [Cider-CI Executor][] are subject to the [GNU Affero General Public
 License Version 3][].
 
@@ -86,17 +101,16 @@ Contributing to Cider-CI
 See [contributing](CONTRIBUTING.md). 
 
 
-
-
   [Bash Demo Project]: https://github.com/cider-ci/cider-ci_demo-project-bash
   [Cider-CI API]: https://github.com/cider-ci/cider-ci_api
   [Cider-CI Ansible Setup]: https://github.com/cider-ci/cider-ci_ansible-setup
+  [Cider-CI Builder]: https://github.com/cider-ci/cider-ci_builder
+  [Cider-CI Dispatcher]: https://github.com/cider-ci/cider-ci_dispatcher
   [Cider-CI Executor]: https://github.com/cider-ci/cider-ci_executor
-  [Cider-CI Trial-Manager]: https://github.com/cider-ci/cider-ci_trial-manager
-  [Cider-Ci Repository-Manager]: https://github.com/cider-ci/cider-ci_repository-manager
-  [Cider-Ci Storage-Manager]: https://github.com/cider-ci/cider-ci_storage-manager
-  [Cider-Ci User-Interface]: https://github.com/cider-ci/cider-ci_user-interface
   [Cider-CI]: https://github.com/cider-ci/cider-ci
+  [Cider-Ci Repository]: https://github.com/cider-ci/cider-ci_repository
+  [Cider-Ci Storage]: https://github.com/cider-ci/cider-ci_storage
+  [Cider-Ci User-Interface]: https://github.com/cider-ci/cider-ci_user-interface
   [Creative Commons Attribution-ShareAlike 4.0 International Public License]: http://creativecommons.org/licenses/by-sa/4.0/legalcode
   [GNU Affero General Public License Version 3]: http://www.gnu.org/licenses/agpl-3.0.html
   [Immutant]: http://immutant.org/
@@ -107,5 +121,6 @@ See [contributing](CONTRIBUTING.md).
   [Zurich University of the Arts]: http://www.zhdk.ch/
   [architecture v0]: https://rawgithub.com/cider-ci/cider-ci/master/doc/architecture_v0.svg
   [architecture v1]: https://rawgithub.com/cider-ci/cider-ci/master/doc/architecture_v1.svg
-  [architecture]: https://rawgithub.com/cider-ci/cider-ci/master/doc/architecture.svg
+  [architecture v2]: https://rawgithub.com/cider-ci/cider-ci/master/doc/architecture_v2.svg
   [architecture vision]: https://rawgithub.com/cider-ci/cider-ci/master/doc/architecture_vision.svg
+  [architecture]: https://rawgithub.com/cider-ci/cider-ci/master/doc/architecture_v2.svg
