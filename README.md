@@ -7,15 +7,15 @@ resilient integration testing.
 State and History
 -----------------
 
-Work on Cider-CI began started May 2013. Cider-CI is used since August 2013 in
-the Development Departement at the IT-Center of the [Zurich University of the
+Work on Cider-CI began in May 2013. Cider-CI is used since August 2013 in
+the development departement at the IT center of the [Zurich University of the
 Arts][]. It has boosted development immensely for the projects [Madek][] and
-[Leihs][]. 
+[Leihs][].
 
-The current release is `2.x`. We continues with the microservice
-approach (see [architecture v2][]) and relive the _ruby on rails_ part by
-introducion a new service called *builder*. Version 2 introduces a new
-specification format which breaks compatibility. Hence, the increment of
+The current release is `2.x`. We continue with the microservice
+approach (see [architecture v2][]) and relieve the _ruby on rails_ part by
+introducing a new service called *builder*. Version 2 also introduces a new
+specification format which breaks compatibility. Hence the increment of
 the major version.
 
 Cider-CI moved to a microservice architecture with version `1.5.0`. An
@@ -31,46 +31,43 @@ and deployed in [Torquebox][]/JBoss, see [architecture v0][].
 Core Components
 ---------------
 
-Cider-CI consists of the following components respectively services:
+Cider-CI consists of the following components and services:
 
-0.  The [Cider-CI Dispatcher][] dispatches so called *trials* (units
+0.  The [Cider-CI Dispatcher][] dispatches so-called *trials* (units
     of execution) to the executors and syncs them with the executors.
 
 0.  The [Cider-CI Builder][] translates the execution specification
     into tasks.
 
-0.  The [Cider-CI Repository][] manages the git-repositories. It
-    syncs them and provides an interface to other services. 
+0.  The [Cider-CI Repository][] manages the git repositories. It
+    syncs them and provides an interface to other services.
 
-
-0.  The [Cider-CI User-Interface][] serves the front-end for to users.
+0.  The [Cider-CI User Interface][] serves the front-end to users.
     This is a *Ruby on Rails* application wich runs within the *[Puma
-    Web Server][]*. 
+    Web Server][]*.
 
-0.  The [Cider-CI Storage][] serves and stores artifacts like
+0.  The [Cider-CI Storage][] component serves and stores artifacts like
     build results (e.g. _JVM Jars_, or _Ruby Gems_) or log files of
-    a test-run. 
+    a test-run.
 
-0.  The [Cider-CI API][] provides a json (hal+json precisely) 
-  interface to interact in a programmatic way with Cider-CI.
-    
+0.  The [Cider-CI API][] provides a JSON (or more precisely, hal+json)
+    interface to interact in a programmatic way with Cider-CI.
 
 0.  The [Cider-CI Executor][] runs in the JVM on every executor (node).
-
 
 The [architecture][] overview diagram illustrates how the
 components interact.
 
 
-Supplementary Projects 
+Supplementary Projects
 ----------------------
 
 The [Cider-CI][] repository contains documentation and references.
 
 The [Cider-CI Ansible Setup][] project helps you to deploy and
-manager your *Cider-CI* infrastructure. 
+manage your *Cider-CI* infrastructure.
 
-The [Bash Demo Project][] is probably the most simple project that demonstrates
+The [Bash Demo Project][] is probably the simplest project that demonstrates
 testing with _Cider-CI_.
 
 
@@ -98,7 +95,7 @@ Commons Attribution-ShareAlike 4.0 International Public License][].
 Contributing to Cider-CI
 ------------------------
 
-See [contributing](CONTRIBUTING.md). 
+See [contributing](CONTRIBUTING.md).
 
 
   [Bash Demo Project]: https://github.com/cider-ci/cider-ci_demo-project-bash
@@ -110,7 +107,7 @@ See [contributing](CONTRIBUTING.md).
   [Cider-CI]: https://github.com/cider-ci/cider-ci
   [Cider-Ci Repository]: https://github.com/cider-ci/cider-ci_repository
   [Cider-Ci Storage]: https://github.com/cider-ci/cider-ci_storage
-  [Cider-Ci User-Interface]: https://github.com/cider-ci/cider-ci_user-interface
+  [Cider-Ci User Interface]: https://github.com/cider-ci/cider-ci_user-interface
   [Creative Commons Attribution-ShareAlike 4.0 International Public License]: http://creativecommons.org/licenses/by-sa/4.0/legalcode
   [GNU Affero General Public License Version 3]: http://www.gnu.org/licenses/agpl-3.0.html
   [Immutant]: http://immutant.org/
