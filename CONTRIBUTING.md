@@ -5,13 +5,13 @@ Vision for Evolution
 --------------------
 
 There is a clear vision of what features Cider-CI will and will not support
-in the future. 
+in the future.
 
 SCM and Pull Requests
 ---------------------
 
 The _master_ branch has a stable history. All other branches are subject 
-to rebasing etc. 
+to rebasing etc.
 
 A pull request should be a single commit on top of the most recent commit
 of the _master_ branch.
