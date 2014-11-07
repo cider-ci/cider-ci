@@ -12,7 +12,7 @@ the development departement at the IT center of the [Zurich University of the
 Arts][]. It has boosted development immensely for the projects [Madek][] and
 [Leihs][].
 
-The current release is `2.x`. We continue with the microservice
+The current release is `2.0.0`. We continue with the microservice
 approach (see [architecture v2][]) and relieve the _ruby on rails_ part by
 introducing a new service called *builder*. Version 2 also introduces a new
 specification format which breaks compatibility. Hence the increment of
@@ -78,6 +78,7 @@ The following people have contributed to this project:
 
 * [Thomas Schank](https://github.com/DrTom/)
 * [Max Albrecht](https://github.com/eins78)
+* [Psy-Q](https://github.com/psy-q/)
 
 
 License
