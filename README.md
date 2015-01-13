@@ -8,15 +8,11 @@ State and History
 -----------------
 
 Work on Cider-CI began in May 2013. Cider-CI is used since August 2013 in
-the development departement at the IT center of the [Zurich University of the
+the development department at the IT center of the [Zurich University of the
 Arts][]. It has boosted development immensely for the projects [Madek][] and
 [Leihs][].
 
-The current release is `2.1.x`. We continue with the microservice
-approach (see [architecture v2][]) and relieve the _ruby on rails_ part by
-introducing a new service called *builder*. Version 2 also introduces a new
-specification format which breaks compatibility. Hence the increment of
-the major version.
+The current release number is `2.x`. 
 
 Cider-CI moved to a microservice architecture with version `1.5.0`. An
 application server is no longer needed.
