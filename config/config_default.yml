@@ -1,0 +1,171 @@
+database: 
+  adapter: "postgresql" 
+  classname: "org.postgresl.Driver"
+  subname: "//localhost:5432/cider-ci_development"
+  subprotocol: "postgresql"
+  user: cider-ci
+  password: cider-ci
+  max_pool_size: 3
+
+hostname: localhost
+
+secret: secret
+
+basic_auth:
+  username: service
+  password: secret
+
+session:
+  secret: "secret"
+
+messaging: 
+  connection: 
+    vhost: cider-ci
+    host: 127.0.0.1
+    username: cider-ci
+    password: cider-ci
+
+server_base_url: http://localhost:8888
+
+services: 
+
+  api: 
+
+    http: 
+      host: localhost
+      port: 8885
+      context: /cider-ci
+      sub_context: /api/v2
+      ssl: false
+
+    nrepl:
+      port: 7885
+      bind: "127.0.0.1"
+      enabled: false
+
+    database: 
+      max_pool_size: 3
+
+
+  builder: 
+
+    http: 
+      host: 127.0.0.1
+      port: 8884
+      context: /cider-ci
+      sub_context: /builder
+      ssl: false
+
+    nrepl: 
+      port: 7884
+      bind: "127.0.0.1"
+      enabled: false
+
+    database: 
+      max_pool_size: 3
+
+
+  dispatcher: 
+
+    http: 
+      host: "127.0.0.1"
+      port: 8882
+      context: '/cider-ci'
+      sub_context: '/dispatcher'
+      ssl: false
+
+    nrepl:
+      port: 7882
+      bind: "127.0.0.1"
+      enabled: false
+
+    database: 
+      max_pool_size: 3
+
+
+  documentation: 
+
+    # this is used in  development/test only; apache serves in production
+    http: 
+      host: localhost
+      port: 8887
+      context: /cider-ci
+      sub_context: /documentation
+      ssl: false
+
+
+  repository: 
+
+    http: 
+      host: 127.0.0.1
+      port: 8881
+      context: /cider-ci
+      sub_context: /repositories
+      ssl: false
+
+    nrepl:
+      port: 7881
+      bind: "127.0.0.1"
+      enabled: false
+
+    database: 
+      max_pool_size: 3
+
+    repositories: 
+      path: "./tmp/repositories" 
+
+
+  storage: 
+
+    http: 
+      host: localhost
+      port: 8886
+      context: /cider-ci
+      sub_context: /storage
+      ssl: false
+
+    nrepl:
+      port: 7886
+      bind: "127.0.0.1"
+      enabled: false
+
+    database: 
+      max_pool_size: 3
+
+    stores: 
+
+      - url_path_prefix: "/trial-attachments"
+        file_path: "./tmp/storage/trial-attachments"
+        retention_time_days: 1
+        db_table: trial_attachments
+
+      - url_path_prefix: "/tree-attachments"
+        file_path: "./tmp/storage/tree-attachments"
+        retention_time_days: 1
+        db_table: tree_attachments
+
+
+  ui: 
+
+    http: 
+      host: localhost
+      port: 8880
+      context: /cider-ci
+      sub_context: /ui
+      ssl: false
+
+
+# configuration for the reverse proxy for dev and test, not used in production
+reverse_proxy:
+
+  http: 
+    host: localhost
+    port: 8888
+    ssl: false
+
+  nrepl:
+    port: 7888
+    bind: "127.0.0.1"
+    enabled: true
+
+

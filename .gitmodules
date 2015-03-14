@@ -1,0 +1,48 @@
+[submodule "api"]
+	path = api
+	url = https://github.com/cider-ci/cider-ci_api.git
+
+[submodule "ansible-setup"]
+	path = ansible-setup
+	url = https://github.com/cider-ci/cider-ci_ansible-setup.git
+
+[submodule "builder"]
+	path = builder
+	url = https://github.com/cider-ci/cider-ci_builder.git
+
+[submodule "dispatcher"]
+	path = dispatcher
+	url = https://github.com/cider-ci/cider-ci_dispatcher.git
+
+[submodule "demo-project-bash"]
+	path = demo-project-bash
+	url = https://github.com/cider-ci/cider-ci_demo-project-bash.git
+
+[submodule "documentation"]
+	path = documentation
+	url = https://github.com/cider-ci/cider-ci_documentation.git
+
+[submodule "documentation-source"]
+	path = documentation-source
+	url = https://github.com/cider-ci/cider-ci_documentation-source.git
+
+[submodule "executor"]
+	path = executor
+	url = https://github.com/cider-ci/cider-ci_executor.git
+
+[submodule "repository"]
+	path = repository
+	url = https://github.com/cider-ci/cider-ci_repository.git
+
+[submodule "reverse-proxy"]
+	path = reverse-proxy
+	url = https://github.com/cider-ci/cider-ci_reverse-proxy.git
+
+[submodule "storage"]
+	path = storage
+	url = https://github.com/cider-ci/cider-ci_storage.git
+
+[submodule "user-interface"]
+	path = user-interface
+	url = https://github.com/cider-ci/cider-ci_user-interface.git
+

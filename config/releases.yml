@@ -1,0 +1,180 @@
+releases:
+
+- version_major: 2
+  version_minor: 4
+  version_patch: 0  
+  version_pre: BETA.4
+  version_build: NULL
+  description: ""
+
+- version_major: 2
+  version_minor: 3
+  version_patch: 2  
+  version_pre: NULL
+  version_build: NULL
+  description:  |
+    Add cider-ci dotfile and honor execution definitions. 
+    Accept maps for tasks and subcontexts. 
+    Randomize and improve dispatching.  
+    Honor exclusive_resources.
+    Support git sumodules.
+  git_ref: "cider-ci_2.3.2"
+
+
+- version_major: 2
+  version_minor: 2
+  version_patch: 0  
+  version_pre: ""
+  version_build: ""
+  description:  >
+    Improve UI for multi execution processes. 
+    Add result field (json) to trials / tasks / executions.
+    New summary as svg badge and html, show result too. 
+    git_ref: "cider-ci_2.2.0"
+
+- version_major: 2
+  version_minor: 1
+  version_patch: 0  
+  version_pre: ""
+  version_build: ""
+  description:  >
+    Public view permission for executions and related resources. 
+    Generalize svg with styles for img tag embedding.
+    Enable bootstrap themes. 
+  git_ref: "cider-ci_2.1.0"
+
+- version_major: 2
+  version_minor: 0
+  version_patch: 0  
+  version_pre: ""
+  version_build: ""
+  description:  >
+    Add builder. Introduce new specification format. 
+    Move API from HAL to JSON-ROA.
+    Change PUT on Storage-API to REST sematics (no conflict).
+    Support Debian Wheezy.
+  git_ref: "master"
+
+- version_major: 1
+  version_minor: 7
+  version_patch: 2  
+  version_pre: ""
+  version_build: ""
+  description:  >
+    Fix link to trial_attachments in API.
+  git_ref: "1.7.2"
+
+- version_major: 1
+  version_minor: 7
+  version_patch: 1  
+  version_pre: ""
+  version_build: ""
+  description:  >
+    Improve performance, improve progressive ui, improve reloader.
+  git_ref: "1.7.1"
+
+- version_major: 1
+  version_minor: 7
+  version_patch: 0 
+  version_pre: ""
+  version_build: ""
+  description:  >
+    Add API. Add tree attachments. 
+  git_ref: "1.7.0"
+
+- version_major: 1
+  version_minor: 6
+  version_patch: 1 
+  version_pre: ""
+  version_build: ""
+  description:  >
+    Fix git fetch on executor.
+  git_ref: "1.6.1"
+
+- version_major: 1
+  version_minor: 6
+  version_patch: 0 
+  version_pre: ""
+  version_build: ""
+  description:  >
+    Security improvements: authenticate and authorize between executors 
+    and server, use https throughout when not communicating within 
+    localhost. Refacor and clean-up executor code. 
+  git_ref: "1.6.0"
+
+
+- version_major: 1
+  version_minor: 5
+  version_patch: 0 
+  version_pre: ""
+  version_build: "" 
+  description:  >
+                  Disect into services. 
+                  Do not run within and remove dependency on Jboss/Polyglot.
+  git_ref: "1.5.0"
+
+- version_major: 1
+  version_minor: 4
+  version_patch: 5
+  description:  >
+                  Change repo locations. Minor fixes.
+  
+- version_major: 1
+  version_minor: 4
+  version_patch: 4
+  description:  >
+                Welcome page with custom section and radiator.
+                Result bars in execution overview. 
+                Per page filter on executions and tasks.
+                Css and icon fixes. Improved reloader.
+                Blacklist some env vars on the executors.
+                Tags are links.
+ 
+- version_major: 1
+  version_minor: 4
+  version_patch: 3
+  description:  >
+                Move server-settings from database to config file.
+
+- version_major: 1
+  version_minor: 4
+  version_patch: 2
+  description:  >
+                Delete scrips of a trial after a configurable retention time. 
+
+- version_major: 1
+  version_minor: 4
+  version_patch: 1
+  description:  >
+                Auto tag executions with branch and repo. Minor UI improvements.
+                Timeout ping requests. Reinitialize repo when not present.
+
+- version_major: 1
+  version_minor: 4
+  version_patch: 0
+  description:  > 
+                UI and some UX overhaul. Simplify reloader and 
+                involved javascript.
+
+- version_major: 1
+  version_minor: 3
+  version_patch: 2
+  description:  >
+                Executor inherits HOME and USER to shell.  Revamped 
+                sourcing and layout wrt local login, rc and profile files.
+
+- version_major: 1
+  version_minor: 3
+  version_patch: 1
+  description: >
+               Ascertain lost trials and revamp dispatching.  Send trial
+               status on request; revert to non interactive shell by default. 
+               Revamp of welcome/about page.
+
+- version_major: 1
+  version_minor: 3
+  version_patch: 0
+  description: >
+               Ascertain lost trials and revamped dispatching on server-im.
+               Send trial status on request; revert to non interactive shell 
+               by default on executor.
