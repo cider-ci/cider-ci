@@ -3,7 +3,7 @@ releases:
 - version_major: 2
   version_minor: 4
   version_patch: 0  
-  version_pre: BETA.4
+  version_pre: BETA.5
   version_build: NULL
   description: ""
 

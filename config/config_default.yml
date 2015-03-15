@@ -41,7 +41,7 @@ services:
     nrepl:
       port: 7885
       bind: "127.0.0.1"
-      enabled: false
+      enabled: true
 
     database: 
       max_pool_size: 3
@@ -59,7 +59,7 @@ services:
     nrepl: 
       port: 7884
       bind: "127.0.0.1"
-      enabled: false
+      enabled: true
 
     database: 
       max_pool_size: 3
@@ -77,7 +77,7 @@ services:
     nrepl:
       port: 7882
       bind: "127.0.0.1"
-      enabled: false
+      enabled: true
 
     database: 
       max_pool_size: 3
@@ -106,7 +106,7 @@ services:
     nrepl:
       port: 7881
       bind: "127.0.0.1"
-      enabled: false
+      enabled: true
 
     database: 
       max_pool_size: 3
@@ -127,7 +127,7 @@ services:
     nrepl:
       port: 7886
       bind: "127.0.0.1"
-      enabled: false
+      enabled: true
 
     database: 
       max_pool_size: 3
