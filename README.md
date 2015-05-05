@@ -4,25 +4,8 @@ Cider-CI
 Cider-CI is an application and service stack for highly parallelized and
 resilient integration testing. 
 
-State and History
------------------
-
-Work on Cider-CI began in May 2013. Cider-CI is used since August 2013 in
-the development department at the IT center of the [Zurich University of the
-Arts][]. It has boosted development immensely for the projects [Madek][] and
-[Leihs][].
-
-The current release number is `2.x`. 
-
-Cider-CI moved to a microservice architecture with version `1.5.0`. An
-application server is no longer needed.
-
-The application was split-up in a *Clojure* and *Ruby on Rails* part in
-version `1.0.x`. Both applications were still running within the *JBoss
-Application Server*, see [architecture v1][].
-
-Cider-CI `0.x` was a single application implemented in *Ruby on Rails*
-and deployed in [Torquebox][]/JBoss, see [architecture v0][].
+This is the main repository of Cider-CI. The Cider-CI core components are
+referenced from this repository as git submodules. 
 
 Core Components
 ---------------
@@ -58,7 +41,6 @@ components interact.
 Supplementary Projects
 ----------------------
 
-The [Cider-CI][] repository contains documentation and references.
 
 The [Cider-CI Ansible Setup][] project helps you to deploy and
 manage your *Cider-CI* infrastructure.

@@ -3,9 +3,11 @@ releases:
 - version_major: 2
   version_minor: 4
   version_patch: 0  
-  version_pre: RC.3
+  version_pre: NULL
   version_build: NULL
-  description: ""
+  description: |
+    Improve repository handling with respect to stability and performance on
+    executors. Improve submodule handling and performance.
 
 - version_major: 2
   version_minor: 3
