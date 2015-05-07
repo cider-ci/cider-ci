@@ -2,6 +2,14 @@ releases:
 
 - version_major: 2
   version_minor: 4
+  version_patch: 1  
+  version_pre: NULL
+  version_build: NULL
+  description: |
+    Fix link to releases on public page. Fix naming in documentation. 
+
+- version_major: 2
+  version_minor: 4
   version_patch: 0  
   version_pre: NULL
   version_build: NULL
