@@ -46,3 +46,6 @@
 	path = user-interface
 	url = https://github.com/cider-ci/cider-ci_user-interface.git
 
+[submodule "integration-tests"]
+	path = integration-tests
+	url = https://github.com/cider-ci/cider-ci_integration-tests.git

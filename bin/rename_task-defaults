@@ -1,0 +1,3 @@
+egrep -R -l 'task_defaults' src/* .cider-ci.yml .cider-ci/*  source/* | \
+  xargs -I {} -o \
+  vim '+%s/task_defaults/task-defaults/gI' '+wq' {}

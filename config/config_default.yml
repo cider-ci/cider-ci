@@ -1,10 +1,10 @@
 database: 
   adapter: "postgresql" 
   classname: "org.postgresl.Driver"
-  subname: "//localhost:5432/cider-ci_development"
+  subname: "//localhost:5432/cider-ci_v3_development"
   subprotocol: "postgresql"
   user: cider-ci
-  password: cider-ci
+  password: secret
   max_pool_size: 3
 
 hostname: localhost
@@ -23,7 +23,7 @@ messaging:
     vhost: cider-ci
     host: 127.0.0.1
     username: cider-ci
-    password: cider-ci
+    password: secret
 
 server_base_url: http://localhost:8888
 
@@ -35,7 +35,7 @@ services:
       host: localhost
       port: 8885
       context: /cider-ci
-      sub_context: /api/v2
+      sub_context: /api
       ssl: false
 
     nrepl:

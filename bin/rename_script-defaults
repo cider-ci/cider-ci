@@ -1,0 +1,3 @@
+egrep -R -l 'script_defaults' src/* .cider-ci.yml .cider-ci/*  source/* | \
+  xargs -I {} -o \
+  vim '+%s/script_defaults/script-defaults/gI' '+wq' {}

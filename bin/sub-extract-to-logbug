@@ -1,0 +1,36 @@
+egrep cider-ci.utils.debug -R -l src/* | \
+  xargs -I {} -o vim '+%s/cider-ci.utils.debug/drtom.logbug.debug/' '+wq' {}
+
+egrep 'routing/wrap-debug-logging' -R -l src/* |  \
+  xargs -I {} -o vim '+%s/routing\/wrap-debug-logging/wrap-handler-with-logging/g' '+wq' {}
+
+egrep '\[cider-ci.utils.with :as with\]' -R -l src/* | \
+  xargs -I {} -o vim '+%s/\v\[cider-ci.utils.with :as with\]/[drtom.logbug.catcher :as catcher]/g' '+wq' {}
+
+
+egrep '\[cider-ci.utils.exception :as exception\]' -R -l src/* | \
+  xargs -I {} -o vim '+%s/\v\[cider-ci.utils.exception :as exception\]/[drtom.logbug.thrown :as thrown]/g' '+wq' {}
+
+egrep 'stringify' -R -l src/* | \
+  xargs -I {} -o vim '+%s/exception\/stringify/thrown\/stringify/g' '+wq' {}
+
+egrep 'with/logging' -R -l src/* | \
+  xargs -I {} -o vim '+%s/\vwith\/logging\s*$/catcher\/wrap-with-log-warn/g' '+wq' {}
+
+egrep 'with/suppress' -R -l src/* | \
+  xargs -I {} -o vim  \
+  '+%s/\vwith\/suppress-and-log-error/catcher\/wrap-with-suppress-and-log-error/g' \
+  '+%s/\vwith\/suppress-and-log-warn/catcher\/wrap-with-suppress-and-log-warn/g' \
+  '+%s/\vwith\/suppress-and-log-debug/catcher\/wrap-with-suppress-and-log-debug/g' \
+  '+wq' {}
+
+
+egrep 'with/log' -R -l src/* | \
+  xargs -I {} -o vim '+%s/\vwith\/log\s+/catcher\/wrap-with-log /g' '+wq' {}
+
+egrep 'with/log' -R -l src/* | \
+  xargs -I {} -o vim '+%s/\vwith\/log-error/catcher\/wrap-with-log-error/g' '+wq' {}
+
+
+
+
