@@ -9,7 +9,7 @@ referenced from this repository as git submodules.
 
 ## Status
 
-[![Integration-Tests](http://ci3.zhdk.ch/cider-ci/ui/public/Cider-CI/v3/Integration-Tests/summary.svg?respond_with_200&orientation=vertical =250x)](http://ci3.zhdk.ch/cider-ci/ui/public/Cider-CI/v3/Integration-Tests/summary.html)
+[![Integration-Tests](http://ci3.zhdk.ch/cider-ci/ui/public/Cider-CI/master/Integration-Tests/summary.svg?respond_with_200&orientation=vertical =250x)](http://ci3.zhdk.ch/cider-ci/ui/public/Cider-CI/master/Integration-Tests/summary.html)
 
 Core Components
 ---------------
