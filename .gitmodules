@@ -49,3 +49,6 @@
 [submodule "integration-tests"]
 	path = integration-tests
 	url = https://github.com/cider-ci/cider-ci_integration-tests.git
+[submodule "notifier"]
+	path = notifier
+	url = https://github.com/cider-ci/cider-ci_notifier.git

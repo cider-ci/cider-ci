@@ -1,6 +1,16 @@
 releases:
 
 - version_major: 3
+  version_minor: 2
+  version_patch: 0
+  version_pre: NULL
+  version_build: NULL
+  description: |
+    The accept repositories feature is stable.
+    Update repository on notification (BETA).
+    Push statuses to GitHub (BETA).
+
+- version_major: 3
   version_minor: 1
   version_patch: 0
   version_pre: NULL

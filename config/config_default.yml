@@ -1,11 +1,13 @@
-database: 
-  adapter: "postgresql" 
+database:
+  adapter: "postgresql"
   classname: "org.postgresl.Driver"
   subname: "//localhost:5432/cider-ci_v3_development"
   subprotocol: "postgresql"
   user: cider-ci
   password: secret
   max_pool_size: 3
+
+github_authtoken: NULL
 
 hostname: localhost
 
@@ -18,8 +20,8 @@ basic_auth:
 session:
   secret: "secret"
 
-messaging: 
-  connection: 
+messaging:
+  connection:
     vhost: cider-ci
     host: 127.0.0.1
     username: cider-ci
@@ -27,11 +29,11 @@ messaging:
 
 server_base_url: http://localhost:8888
 
-services: 
+services:
 
-  api: 
+  api:
 
-    http: 
+    http:
       host: localhost
       port: 8885
       context: /cider-ci
@@ -43,31 +45,31 @@ services:
       bind: "127.0.0.1"
       enabled: true
 
-    database: 
+    database:
       max_pool_size: 3
 
 
-  builder: 
+  builder:
 
-    http: 
+    http:
       host: 127.0.0.1
       port: 8884
       context: /cider-ci
       sub_context: /builder
       ssl: false
 
-    nrepl: 
+    nrepl:
       port: 7884
       bind: "127.0.0.1"
       enabled: true
 
-    database: 
+    database:
       max_pool_size: 3
 
 
-  dispatcher: 
+  dispatcher:
 
-    http: 
+    http:
       host: "127.0.0.1"
       port: 8882
       context: '/cider-ci'
@@ -79,14 +81,15 @@ services:
       bind: "127.0.0.1"
       enabled: true
 
-    database: 
+    database:
       max_pool_size: 3
 
+    dispatch_interval: 1.0
 
-  documentation: 
+  documentation:
 
     # this is used in  development/test only; apache serves in production
-    http: 
+    http:
       host: localhost
       port: 8887
       context: /cider-ci
@@ -94,9 +97,27 @@ services:
       ssl: false
 
 
-  repository: 
+  notifier:
 
-    http: 
+    http:
+      host: 127.0.0.1
+      port: 8887
+      context: /cider-ci
+      sub_context: /notifier
+      ssl: false
+
+    nrepl:
+      port: 7887
+      bind: "127.0.0.1"
+      enabled: true
+
+    database:
+      max_pool_size: 3
+
+
+  repository:
+
+    http:
       host: 127.0.0.1
       port: 8881
       context: /cider-ci
@@ -108,16 +129,16 @@ services:
       bind: "127.0.0.1"
       enabled: true
 
-    database: 
+    database:
       max_pool_size: 3
 
-    repositories: 
-      path: "./tmp/repositories" 
+    repositories:
+      path: "./tmp/repositories"
 
 
-  storage: 
+  storage:
 
-    http: 
+    http:
       host: localhost
       port: 8886
       context: /cider-ci
@@ -129,10 +150,10 @@ services:
       bind: "127.0.0.1"
       enabled: true
 
-    database: 
+    database:
       max_pool_size: 3
 
-    stores: 
+    stores:
 
       - url_path_prefix: "/trial-attachments"
         file_path: "./tmp/storage/trial-attachments"
@@ -145,9 +166,9 @@ services:
         db_table: tree_attachments
 
 
-  ui: 
+  ui:
 
-    http: 
+    http:
       host: localhost
       port: 8880
       context: /cider-ci
@@ -158,7 +179,7 @@ services:
 # configuration for the reverse proxy for dev and test, not used in production
 reverse_proxy:
 
-  http: 
+  http:
     host: localhost
     port: 8888
     ssl: false
