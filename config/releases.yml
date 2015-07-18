@@ -1,6 +1,18 @@
 releases:
 
 - version_major: 3
+  version_minor: 3
+  version_patch: 0
+  version_pre: NULL
+  version_build: NULL
+  description: |
+    Rename dotfile to project configuration (file).
+    Accept also JSON configuration files.
+    Accept unhidden project configuration files.
+    Move project-configuration building over to repository service.
+    Fix tasks pagination in job view.
+
+- version_major: 3
   version_minor: 2
   version_patch: 0
   version_pre: NULL

@@ -2,14 +2,14 @@ Cider-CI
 ========
 
 Cider-CI is an application and service stack for highly parallelized and
-resilient integration testing. 
+resilient integration testing.
 
 This is the main repository of Cider-CI. The Cider-CI core components are
-referenced from this repository as git submodules. 
+referenced from this repository as git submodules.
 
 ## Status
 
-[![Integration-Tests](http://ci3.zhdk.ch/cider-ci/ui/public/Cider-CI/master/Integration-Tests/summary.svg?respond_with_200&orientation=vertical =250x)](http://ci3.zhdk.ch/cider-ci/ui/public/Cider-CI/master/Integration-Tests/summary.html)
+[![Integration-Tests](http://ci2.zhdk.ch/cider-ci/ui/public/Cider-CI/master/Integration-Tests/summary.svg?respond_with_200&orientation=vertical =250x)](http://ci2.zhdk.ch/cider-ci/ui/public/Cider-CI/master/Integration-Tests/summary.html)
 
 Core Components
 ---------------
@@ -99,8 +99,4 @@ See [contributing](CONTRIBUTING.md).
   [Puma Web Server]: http://puma.io/
   [TorqueBox]: http://torquebox.org/
   [Zurich University of the Arts]: http://www.zhdk.ch/
-  [architecture v0]: https://rawgithub.com/cider-ci/cider-ci/master/doc/architecture_v0.svg
-  [architecture v1]: https://rawgithub.com/cider-ci/cider-ci/master/doc/architecture_v1.svg
-  [architecture v2]: https://rawgithub.com/cider-ci/cider-ci/master/doc/architecture_v2.svg
-  [architecture vision]: https://rawgithub.com/cider-ci/cider-ci/master/doc/architecture_vision.svg
-  [architecture]: https://rawgithub.com/cider-ci/cider-ci/master/doc/architecture_v2.svg
+  [architecture]: http://docs.cider-ci.info/development/architecture/
