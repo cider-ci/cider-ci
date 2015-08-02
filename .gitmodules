@@ -2,10 +2,6 @@
 	path = api
 	url = https://github.com/cider-ci/cider-ci_api.git
 
-[submodule "ansible-setup"]
-	path = ansible-setup
-	url = https://github.com/cider-ci/cider-ci_ansible-setup.git
-
 [submodule "builder"]
 	path = builder
 	url = https://github.com/cider-ci/cider-ci_builder.git
@@ -52,3 +48,6 @@
 [submodule "notifier"]
 	path = notifier
 	url = https://github.com/cider-ci/cider-ci_notifier.git
+[submodule "deploy"]
+	path = deploy
+	url = https://github.com/cider-ci/cider-ci_deploy.git

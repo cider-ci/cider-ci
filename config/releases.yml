@@ -1,6 +1,19 @@
 releases:
 
 - version_major: 3
+  version_minor: 4
+  version_patch: 0
+  version_pre: NULL
+  version_build: NULL
+  description: |
+    * Filter commits by distance to branch head.
+    * Rework fetch-and-update in repository service.
+    * Fix import: a deep commit history and limited RAM could blow the stack
+      or memory and terminate the import irrecoverably.
+    * Add pull mode for executor operation (BETA).
+    * Jobs can depend on other jobs in submodules (BETA).
+
+- version_major: 3
   version_minor: 3
   version_patch: 0
   version_pre: NULL
