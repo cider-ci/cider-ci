@@ -14,12 +14,14 @@ then
     exit 1
 fi
 
-git tag -s "$1" -m "Cider-CI version $1"
-git tag -s "Cider-CI_$1" -m "Cider-CI version $1"
+#git tag -s "$1" -m "Cider-CI version $1"
+#git tag -s "Cider-CI_$1" -m "Cider-CI version $1"
 
 
-git submodule foreach 'git tag -s "Cider-CI_$1" -m "Cider-CI version $1"'
+#git submodule foreach "git tag -s 'Cider-CI_$1' -m 'Cider-CI version $1'"
 
-for REMOTE in `git remote -v | awk '{print $1}' | uniq`; do git push $REMOTE --tags; done
-git submodule foreach "for REMOTE in `git remote -v | awk '{print $1}' | uniq`; do git push $REMOTE --tags; done"
+#for REMOTE in `git remote -v | awk '{print $1}' | uniq`; do git push $REMOTE --tags; done
+#git submodule foreach 'for REMOTE in `git remote -v | awk "{print $1}" | uniq`; do git push $REMOTE --tags; done'
+git submodule foreach 'git push github --tags'
+
 
