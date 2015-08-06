@@ -190,3 +190,10 @@ reverse_proxy:
     enabled: true
 
 
+
+constants:
+  JOB_STATES: [failed, aborted, aborting, pending, executing, passed]
+  TASK_STATES: [failed, aborted, aborting, pending, executing, passed]
+  TRIAL_STATES: [failed, aborted, aborting, pending, dispatching, executing, passed]
+  STATES_FINISHED: [failed, aborted, passed]
+
