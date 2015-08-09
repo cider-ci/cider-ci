@@ -192,8 +192,8 @@ reverse_proxy:
 
 
 constants:
-  JOB_STATES: [failed, aborted, aborting, pending, executing, passed]
-  TASK_STATES: [failed, aborted, aborting, pending, executing, passed]
-  TRIAL_STATES: [failed, aborted, aborting, pending, dispatching, executing, passed]
-  STATES_FINISHED: [failed, aborted, passed]
-
+  STATES:
+    JOB: [failed, aborted, aborting, pending, executing, passed]
+    TASK: [failed, aborted, aborting, pending, executing, passed]
+    TRIAL: [failed, aborted, aborting, pending, dispatching, executing, passed]
+    FINISHED: [failed, aborted, passed]

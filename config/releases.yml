@@ -3,10 +3,11 @@ releases:
 - version_major: 3
   version_minor: 5
   version_patch: 0
-  version_pre: beta.1
+  version_pre: beta.2
   version_build: NULL
   description: |
-    TODO
+    Add abort action and related.
+    Improve internal error handling.
 
 
 - version_major: 3
