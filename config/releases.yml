@@ -3,7 +3,7 @@ releases:
 - version_major: 3
   version_minor: 5
   version_patch: 0
-  version_pre: beta.3
+  version_pre: beta.4
   version_build: NULL
   description: |
     Add abort action and related.
