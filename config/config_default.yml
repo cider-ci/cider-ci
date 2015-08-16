@@ -1,3 +1,6 @@
+jobs_retention_time: NULL
+trial_dispatch_timeout: 3 Hours
+
 database:
   adapter: "postgresql"
   classname: "org.postgresl.Driver"
@@ -190,3 +193,9 @@ reverse_proxy:
     enabled: true
 
 
+constants:
+  STATES:
+    JOB: [failed, aborted, aborting, pending, executing, passed]
+    TASK: [failed, aborted, aborting, pending, executing, passed]
+    TRIAL: [failed, aborted, aborting, pending, dispatching, executing, passed]
+    FINISHED: [failed, aborted, passed]
