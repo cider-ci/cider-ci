@@ -160,12 +160,10 @@ services:
 
       - url_path_prefix: "/trial-attachments"
         file_path: "./tmp/storage/trial-attachments"
-        retention_time_days: 1
         db_table: trial_attachments
 
       - url_path_prefix: "/tree-attachments"
         file_path: "./tmp/storage/tree-attachments"
-        retention_time_days: 1
         db_table: tree_attachments
 
 
