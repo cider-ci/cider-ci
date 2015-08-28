@@ -1,6 +1,18 @@
 releases:
 
 - version_major: 3
+  version_minor: 6
+  version_patch: 0
+  version_pre: NULL
+  version_build: NULL
+  name: Peacock
+  description: |
+    * New "My Workspace" page replaces commits and jobs page.
+    * Improve UX and UI.
+    * Remove (now superfluous) radiator.
+    * Reorganize storage tables.
+
+- version_major: 3
   version_minor: 5
   version_patch: 0
   version_pre: NULL
