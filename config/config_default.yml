@@ -1,5 +1,5 @@
-jobs_retention_time: NULL
-trial_dispatch_timeout: 3 Hours
+job_retention_duration: 50 Years
+trial_dispatch_timeout: 30 Minutes
 
 database:
   adapter: "postgresql"
@@ -73,7 +73,7 @@ services:
   dispatcher:
 
     http:
-      host: "127.0.0.1"
+      host: "0.0.0.0"
       port: 8882
       context: '/cider-ci'
       sub_context: '/dispatcher'

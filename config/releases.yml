@@ -1,6 +1,17 @@
 releases:
 
 - version_major: 3
+  version_minor: 7
+  version_patch: 0
+  version_pre: RC.1
+  version_build: NULL
+  name: Redmond
+  description: |
+    Basic execution on windows working.
+    Use id rather than name for executor authentication.
+    Restructure and reorganize deploy configuration.
+
+- version_major: 3
   version_minor: 6
   version_patch: 0
   version_pre: NULL
