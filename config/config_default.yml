@@ -87,8 +87,6 @@ services:
     database:
       max_pool_size: 3
 
-    dispatch_interval: 1.0
-
   documentation:
 
     # this is used in  development/test only; apache serves in production
