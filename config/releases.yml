@@ -3,13 +3,15 @@ releases:
 - version_major: 3
   version_minor: 7
   version_patch: 0
-  version_pre: RC.2
+  version_pre: NULL
   version_build: NULL
   name: Redmond
   description: |
     Support Windows operating system on executors.
     Use id rather than name for executor authentication.
     Restructure and reorganize deploy configuration.
+    Update and or rewrite large part of the documentation.
+    Rewrite part of the dispatcher: improve performance and fix issue with multiple accepted_repositories.
 
 - version_major: 3
   version_minor: 6
