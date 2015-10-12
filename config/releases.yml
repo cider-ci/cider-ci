@@ -2,6 +2,15 @@ releases:
 
 - version_major: 3
   version_minor: 7
+  version_patch: 1
+  version_pre: NULL
+  version_build: NULL
+  name: Redmond
+  description: |
+    Upgrade Firefox-ESR version.
+
+- version_major: 3
+  version_minor: 7
   version_patch: 0
   version_pre: NULL
   version_build: NULL
