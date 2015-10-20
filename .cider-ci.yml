@@ -1,3 +1,0 @@
-_cider-ci_include: 
-  - path: .cider-ci/jobs/integration-tests.yml
-    submodule: ['integration-tests']

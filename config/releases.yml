@@ -1,11 +1,36 @@
 releases:
 
 - version_major: 3
+  version_minor: 8
+  version_patch: 0
+  version_pre: 12.beta
+  version_build: NULL
+  name: Cardano
+  about-name: |
+    Cider-CI 3.8 **Cardano** is named after _Gerolamo Cardano_ an 16th century
+    Italian scholar and gambler. He is recognized as one of the founders of
+    probability theory in mathematics.
+  description: |
+    * Show unavailable jobs on new job page, too.
+    * Environment variables can be recursively templated.
+    * Add file-templates.
+    * Add statistics page for jobs.
+    * Add Gantt-Diagram which shows scripts of a trial.
+    * Notifier supports SSH URLs (as used by GitHub) for notification pushing.
+    * Add and honor `ignore-abort` parameter to scripts.
+    * Fix precision of cache-signatures in UI. This fixes caching issues in the UI.
+    * Executor honors exclude/include match for checking out submodules.
+
+- version_major: 3
   version_minor: 7
   version_patch: 0
   version_pre: NULL
   version_build: NULL
   name: Redmond
+  about-name: |
+    Cider-CI 3.8 "Redmond" is named after the city Redmond close to
+    Seatle, Washington. Readmond is the home of Microsoft which is
+    mainly known for the operating system Windows.
   description: |
     Support Windows operating system on executors.
     Use id rather than name for executor authentication.
