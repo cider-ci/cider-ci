@@ -3,7 +3,7 @@ releases:
 - version_major: 3
   version_minor: 8
   version_patch: 0
-  version_pre: 13.beta
+  version_pre: 14.beta
   version_build: NULL
   name: Cardano
   about-name: |
