@@ -3,7 +3,7 @@ releases:
 - version_major: 3
   version_minor: 8
   version_patch: 0
-  version_pre: 15.beta
+  version_pre: 16.beta
   version_build: NULL
   name: Cardano
   about-name: |
@@ -11,15 +11,28 @@ releases:
     Italian scholar and gambler. He is recognized as one of the founders of
     probability theory in mathematics.
   description: |
+
+    ## New Features
+
     * Show unavailable jobs on new job page, too.
     * Environment variables can be recursively templated.
     * Add file-templates.
     * Add statistics page for jobs.
     * Add Gantt-Diagram which shows scripts of a trial.
-    * Notifier supports SSH URLs (as used by GitHub) for notification pushing.
     * Add and honor `ignore-abort` parameter to scripts.
-    * Fix precision of cache-signatures in UI. This fixes caching issues in the UI.
     * Executor honors exclude/include match for checking out submodules.
+
+    ## Fixes
+
+    * The notifier now also supports SSH URLs (as used by GitHub)
+      for notification pushing.
+    * Increase timestamp precision of cache-signatures in UI.
+      This fixes several caching issues in the UI.
+    * Fix out of heap memory issues in the UI.
+    * Fix flaky installs due to reliances problems with updating node modules.
+    * Fix an issue with updating Postgresql config on Debian Jessie during
+        installs and upgrades.
+
 
 - version_major: 3
   version_minor: 7
