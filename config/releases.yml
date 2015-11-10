@@ -3,7 +3,7 @@ releases:
 - version_major: 3
   version_minor: 8
   version_patch: 0
-  version_pre: 16.beta
+  version_pre: 21
   version_build: NULL
   name: Cardano
   about-name: |
@@ -18,9 +18,11 @@ releases:
     * Environment variables can be recursively templated.
     * Add file-templates.
     * Add statistics page for jobs.
-    * Add Gantt-Diagram which shows scripts of a trial.
+    * Add visualization showing the dependencies of scripts.
+    * Add Gantt-Diagram showing the duration of scripts.
     * Add and honor `ignore-abort` parameter to scripts.
     * Executor honors exclude/include match for checking out submodules.
+    * Normalize scripts.
 
     ## Fixes
 

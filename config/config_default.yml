@@ -194,4 +194,5 @@ constants:
     JOB: [failed, aborted, aborting, pending, executing, passed]
     TASK: [failed, aborted, aborting, pending, executing, passed]
     TRIAL: [failed, aborted, aborting, pending, dispatching, executing, passed]
-    FINISHED: [failed, aborted, passed]
+    SCRIPT: [failed, aborted, pending, executing, skipped, passed, waiting]
+    FINISHED: [failed, aborted, passed, skipped]
