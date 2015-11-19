@@ -2,6 +2,25 @@ releases:
 
 - version_major: 3
   version_minor: 8
+  version_patch: 1
+  version_pre: NULL
+  version_build: NULL
+  name: Cardano
+  about-name: |
+    Cider-CI 3.8 **Cardano** is named after _Gerolamo Cardano_ an 16th century
+    Italian scholar and gambler. He is recognized as one of the founders of
+    probability theory in mathematics.
+  description: |
+
+    Changes and fixes:
+
+    * Update `stderr`, and `stdout` of script continuously.
+    * Add `exit_status` field to script.
+    * Add JSON-ROA links from and to scripts.
+
+
+- version_major: 3
+  version_minor: 8
   version_patch: 0
   version_pre: NULL
   version_build: NULL
