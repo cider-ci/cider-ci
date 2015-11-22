@@ -1,22 +1,22 @@
 releases:
 
 - version_major: 3
-  version_minor: 8
-  version_patch: 2
+  version_minor: 9
+  version_patch: 0
   version_pre: NULL
   version_build: NULL
-  name: Cardano
+  name: Rigi
   about-name: |
-    Cider-CI 3.8 **Cardano** is named after _Gerolamo Cardano_ an 16th century
-    Italian scholar and gambler. He is recognized as one of the founders of
-    probability theory in mathematics.
+    Cider-CI 3.9 is named after [Mount Rigi](https://en.wikipedia.org/wiki/Rigi)
+    located in Central Switzerland.
   description: |
 
     Changes and fixes:
 
-      * All user actions like run, abort, resume, and retry, are traceable.
-      * Fix broken deploy NPM.
-
+      * Add and implement `aggregate-state` directive for tasks.
+      * Extend documentation.
+      * Upgrade UI dependencies.
+      * Upgrade configuration management gem.
 
 - version_major: 3
   version_minor: 8
@@ -24,10 +24,11 @@ releases:
   version_pre: NULL
   version_build: NULL
   name: Cardano
-  about-name: |
+  about-name: &about-cardano |
     Cider-CI 3.8 **Cardano** is named after _Gerolamo Cardano_ an 16th century
     Italian scholar and gambler. He is recognized as one of the founders of
     probability theory in mathematics.
+
   description: |
 
     Changes and fixes:
@@ -43,10 +44,8 @@ releases:
   version_pre: NULL
   version_build: NULL
   name: Cardano
-  about-name: |
-    Cider-CI 3.8 **Cardano** is named after _Gerolamo Cardano_ an 16th century
-    Italian scholar and gambler. He is recognized as one of the founders of
-    probability theory in mathematics.
+  about-name: *about-cardano
+
   description: |
 
     ## New Features
