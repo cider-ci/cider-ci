@@ -1,6 +1,26 @@
 releases:
 
 - version_major: 3
+  version_minor: 10
+  version_patch: 0
+  version_pre: 1
+  version_build: NULL
+  name: Rigi+
+  about-name: &about-rigi |
+    Cider-CI 3.9 is named after [Mount Rigi](https://en.wikipedia.org/wiki/Rigi)
+    located in Central Switzerland.
+  description: |
+
+    Changes and fixes:
+
+      * Also show commits via submodules tree page.
+      * Add a script/debug page for easier debugging and reproducibility.
+      * Shellescape env-vars on executors.
+
+
+###############################################################################
+
+- version_major: 3
   version_minor: 9
   version_patch: 1
   version_pre: NULL
@@ -34,6 +54,8 @@ releases:
       * Upgrade UI dependencies.
       * Upgrade configuration management gem.
 
+
+###############################################################################
 
 - version_major: 3
   version_minor: 8
@@ -102,6 +124,8 @@ releases:
     * Fix an issue with updating Postgresql config on Debian Jessie during
         installs and upgrades.
 
+
+###############################################################################
 
 - version_major: 3
   version_minor: 7
