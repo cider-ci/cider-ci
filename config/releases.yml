@@ -3,12 +3,14 @@ releases:
 - version_major: 3
   version_minor: 10
   version_patch: 0
-  version_pre: 1
+  version_pre: NULL
   version_build: NULL
-  name: Rigi+
-  about-name: &about-rigi |
-    Cider-CI 3.9 is named after [Mount Rigi](https://en.wikipedia.org/wiki/Rigi)
-    located in Central Switzerland.
+  name: Gantrisch
+  about-name: &about-gantrisch |
+    Cider-CI 3.10 is named after the mountain
+    [Gantrisch](https://en.wikipedia.org/wiki/Gantrisch) located in the Bernese
+    Prealps.
+
   description: |
 
     Changes and fixes:
@@ -16,7 +18,7 @@ releases:
       * Also show commits via submodules tree page.
       * Add a script/debug page for easier debugging and reproducibility.
       * Shellescape env-vars on executors.
-
+      * API: extend and fix filtering jobs.
 
 ###############################################################################
 
