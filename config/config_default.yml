@@ -23,6 +23,8 @@ basic_auth:
 session:
   secret: "secret"
 
+git_proxy_enabled: false
+
 messaging:
   connection:
     vhost: cider-ci
