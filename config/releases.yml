@@ -3,11 +3,12 @@ releases:
 - version_major: 3
   version_minor: 11
   version_patch: 0
-  version_pre: 5
+  version_pre: 6
   version_build: NULL
-  name: NEXT
+  name: Uetli
   about-name: |
-    This release has no name yet.
+    This release is named after the [Uetliberg](https://en.wikipedia.org/wiki/%C3%9Cetliberg),
+    a mountain overlooking Zürich.
 
   description: |
 
