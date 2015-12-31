@@ -3,7 +3,7 @@ releases:
 - version_major: 3
   version_minor: 11
   version_patch: 0
-  version_pre: 7
+  version_pre: 8
   version_build: NULL
   name: Uetli
   about-name: |
@@ -13,6 +13,11 @@ releases:
   description: |
 
     * Introduce compact job notation and perform normalization to canonical notation.
+    * Require recent trial token for patches, and updates to trials and attachments.
+    * Add Max's Cider UI theme. Always precompile a fixed set of UI-themes to choose from.
+    * Add some persistent customization related to logins (e.g. remember UI-theme).
+    * Improve JAVA memory configuration and show memory usage in server status.
+    * Upgrade to phantomjs 1.9.8 for the phantomjs trait.
 
 
 ###############################################################################

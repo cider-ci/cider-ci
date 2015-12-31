@@ -1,4 +1,4 @@
-job_retention_duration: 50 Years
+job_retention_duration: 100 Years
 trial_dispatch_timeout: 30 Minutes
 
 database:
