@@ -3,7 +3,7 @@ releases:
 - version_major: 3
   version_minor: 11
   version_patch: 0
-  version_pre: 8
+  version_pre: NULL
   version_build: NULL
   name: Uetli
   about-name: |
@@ -12,13 +12,18 @@ releases:
 
   description: |
 
-    * Introduce compact job notation and perform normalization to canonical notation.
-    * Require recent trial token for patches, and updates to trials and attachments.
     * Add Max's Cider UI theme. Always precompile a fixed set of UI-themes to choose from.
     * Add some persistent customization related to logins (e.g. remember UI-theme).
+    * Let the attachments directive use the consistent include-, exclude-match directives.
+      Finalized attachments and document it.
+    * Improve debugging on executors:
+        * the working-dir retention time can be changed online,
+        * a working-dir can be marked with `_cider-ci_keep` file.
     * Improve JAVA memory configuration and show memory usage in server status.
+    * Improve status checks and self monitoring.
+    * Introduce compact job notation and perform normalization to canonical notation.
+    * Require recent trial token for patches, and updates to trials and attachments.
     * Upgrade to phantomjs 1.9.8 for the phantomjs trait.
-
 
 ###############################################################################
 

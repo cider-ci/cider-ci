@@ -16,12 +16,12 @@ fi
 
 git tag -s "$1" -m "Cider-CI version $1"
 git tag -s "Cider-CI_$1" -m "Cider-CI version $1"
-
+git push github HEAD:master
 
 git submodule foreach "git tag -s 'Cider-CI_$1' -m 'Cider-CI version $1'"
+git submodule foreach "git push github HEAD:master"
 
-for REMOTE in `git remote -v | awk '{print $1}' | uniq`; do git push $REMOTE --tags; done
-#git submodule foreach 'for REMOTE in `git remote -v | awk "{print $1}" | uniq`; do git push $REMOTE --tags; done'
+git push github --tags
 git submodule foreach 'git push github --tags'
 
 
