@@ -1,6 +1,29 @@
 releases:
 
 - version_major: 3
+  version_minor: 12
+  version_patch: 0
+  version_pre: NULL
+  version_build: NULL
+  name: Spitzmeilen
+  about-name: |
+    The *Spitzmeilen* is a mountain of the Glarus Alps. It is a popular ski or
+    snowboard touring destination in the winter.
+
+    * <https://en.wikipedia.org/wiki/Spitzmeilen>
+    * <http://www.gipfelbuch.ch/tourenfuehrer/gipfel/id/5814/Spitzmeilen>
+
+  description: |
+
+    * The new trial#debug page improves over and replaces the script#debug pages.
+    * Improve database connection handling with respect to memory usage.
+    * Improve default memory settings.
+    * Optimize deploy project sucht that redeployments are performed much faster.
+    * Change the host-name and SSL certificate settings to be much more flexible.
+
+###############################################################################
+
+- version_major: 3
   version_minor: 11
   version_patch: 0
   version_pre: NULL
