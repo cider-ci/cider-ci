@@ -2,7 +2,7 @@ releases:
 
 - version_major: 3
   version_minor: 12
-  version_patch: 1
+  version_patch: 2
   version_pre: NULL
   version_build: NULL
   name: Spitzmeilen
@@ -20,6 +20,8 @@ releases:
     * Improve default memory settings.
     * Optimize deploy project sucht that redeployments are performed much faster.
     * Change the host-name and SSL certificate settings to be much more flexible.
+
+    * Fix compact notation normalization.
 
 ###############################################################################
 
