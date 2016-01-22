@@ -2,7 +2,7 @@ releases:
 
 - version_major: 3
   version_minor: 12
-  version_patch: 2
+  version_patch: 3
   version_pre: NULL
   version_build: NULL
   name: Spitzmeilen
