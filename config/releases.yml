@@ -3,12 +3,16 @@ releases:
 - version_major: 3
   version_minor: 13
   version_patch: 0
-  version_pre: 2
+  version_pre: 3
   version_build: NULL
   name: NULL
   about-name: |
 
   description: |
+
+    * Streamline workspace filters and introduce quick-links.
+    * Set timeout for sql statements in the UI and add some UX around it.
+    * Remove "Home" link from breadcrumbs.
 
 ###############################################################################
 
