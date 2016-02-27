@@ -1,0 +1,3 @@
+egrep -R -l '^; Copyright.*Thomas.*Schank' * \
+  | xargs -o -I {} \
+  vim '+%s/\v^;\s+Copyright.*$/; Copyright © 2013 - 2016 Dr. Thomas Schank <Thomas.Schank@AlgoCon.ch>/g' '+wq' {}

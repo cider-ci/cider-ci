@@ -3,15 +3,19 @@ releases:
 - version_major: 3
   version_minor: 13
   version_patch: 0
-  version_pre: 7
+  version_pre: NULL
   version_build: NULL
-  name: NULL
+  name: Frisco
   about-name: |
+    Frisco is a nickname for San Francisco, California.
+    The city where GitHub's headquarters are located.
 
   description: |
 
+    * Users can sign in via GitHub OAuth.
+    * Implement session_expiration and disabled accounts.
     * Streamline workspace filters and introduce quick-links.
-    * Set timeout for sql statements in the UI and add some UX around it.
+    * Set timeout for SQL statements in the UI and add some UX around it.
     * Remove "Home" link from breadcrumbs.
 
 ###############################################################################

@@ -14,14 +14,14 @@ github_authtoken: NULL
 
 hostname: localhost
 
-secret: secret
+secret: master-secret
 
 basic_auth:
-  username: service
-  password: secret
+  password: service-secret
 
 session:
-  secret: "secret"
+  secret: session-secret
+  max_lifetime: 7 Days
 
 git_proxy_enabled: false
 
