@@ -1,9 +1,25 @@
 releases:
 
 - version_major: 3
+  version_minor: 14
+  version_patch: 0
+  version_pre: 1
+  version_build: NULL
+  name: NULL
+  about-name: NULL
+
+  description: |
+
+    * Prevent dispatch-storms on multi core executors.
+    * Fix NPEs during submodule checkouts on executors.
+
+
+###############################################################################
+
+- version_major: 3
   version_minor: 13
   version_patch: 3
-  version_pre: 1
+  version_pre: NULL
   version_build: NULL
   name: Frisco
   about-name: |
