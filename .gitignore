@@ -1,5 +1,6 @@
-tmp/
+clj-utils/
 config/config.yml
 docker-deploy/
-log/
 lein-dev-plugin/
+log/
+tmp/
