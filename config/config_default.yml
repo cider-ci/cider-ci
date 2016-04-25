@@ -1,5 +1,6 @@
 job_retention_duration: 100 Years
 trial_dispatch_timeout: 30 Minutes
+dispatch-storm-delay-default-duration: 1 Second
 
 database:
   adapter: "postgresql"
