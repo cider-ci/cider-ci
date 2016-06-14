@@ -53,3 +53,9 @@
 [submodule "user-interface"]
 	path = user-interface
 	url = https://github.com/cider-ci/cider-ci_user-interface.git
+[submodule "lein-dev-plugin"]
+	path = lein-dev-plugin
+	url = https://github.com/cider-ci/cider-ci_lein-dev-plugin
+[submodule "clj-utils"]
+	path = clj-utils
+	url = https://github.com/cider-ci/cider-ci_clj-utils.git
