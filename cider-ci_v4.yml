@@ -1,0 +1,11 @@
+jobs:
+  integration-tests:
+    name: Cider-CI RSpec Integration Tests
+    run_when:
+      'any branch is updated':
+        type: branch
+        include_match: '^.*$'
+    context:
+      include:
+      - path: cider-ci_v4/contexts/integration-tests.yml
+        submodule: ['integration-tests']

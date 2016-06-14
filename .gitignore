@@ -2,4 +2,4 @@ tmp/
 config/config.yml
 docker-deploy/
 log/
-lein-dev-plugin/
+/deploy_v4/

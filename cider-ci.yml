@@ -1,3 +1,7 @@
 _cider-ci_include:
+  - path: cider-ci/tests.yml
+    submodule: ['builder']
   - path: cider-ci/jobs/integration-tests.yml
     submodule: ['integration-tests']
+  - path: cider-ci/build.yml
+    submodule: ['deploy']
