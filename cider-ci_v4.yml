@@ -1,0 +1,36 @@
+jobs:
+
+  builder-tests:
+    name: Builder Tests
+    run_when:
+      any branch matches:
+        type: branch
+        include_match: ^.*$
+    context:
+      include:
+      - path: cider-ci/tests.yml
+        submodule: ['builder']
+
+  integration-tests:
+    name: Cider-CI RSpec Integration Tests
+    run_when:
+      'any branch is updated':
+        type: branch
+        include_match: '^.*$'
+    context:
+      include:
+      - path: cider-ci/contexts/integration-tests.yml
+        submodule: ['integration-tests']
+
+  build:
+    name: Build the Cider-CI Archive
+    run_when:
+      integration tests have passed:
+        type: job
+        job_key: integration-tests
+        states: [passed]
+    context:
+      include:
+      - path: cider-ci/contexts/build.yml
+        submodule: ['deploy']
+

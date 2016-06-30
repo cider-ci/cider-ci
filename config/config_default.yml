@@ -1,10 +1,15 @@
 job_retention_duration: 100 Years
+task_retention_duration: 100 Years
+trial_retention_duration: 100 Years
+
 trial_dispatch_timeout: 30 Minutes
+
+dispatch_storm_delay_default_duration: 1 Second
 
 database:
   adapter: "postgresql"
   classname: "org.postgresl.Driver"
-  subname: "//localhost:5432/cider-ci_v3_development"
+  subname: "//localhost:5432/cider-ci_v4"
   subprotocol: "postgresql"
   user: cider-ci
   password: secret
@@ -28,7 +33,7 @@ git_proxy_enabled: false
 messaging:
   connection:
     vhost: cider-ci
-    host: 127.0.0.1
+    host: localhost
     username: cider-ci
     password: secret
 
@@ -198,10 +203,52 @@ reverse_proxy:
     enabled: true
 
 
+# WARNING: this section is duplicated in the executor config
+# to be kept in sync manually
 constants:
   STATES:
-    JOB: [failed, aborted, aborting, pending, executing, passed]
-    TASK: [failed, aborted, aborting, pending, executing, passed]
-    TRIAL: [failed, aborted, aborting, pending, dispatching, executing, passed]
-    SCRIPT: [failed, aborted, pending, executing, skipped, passed, waiting]
-    FINISHED: [failed, aborted, passed, skipped]
+    JOB:
+      # custom order for the UI here, do not resort alphabetically!
+      - passed
+      - executing
+      - pending
+      - aborting
+      - aborted
+      - defective
+      - failed
+    TASK:
+      - aborted
+      - aborting
+      - defective
+      - executing
+      - failed
+      - passed
+      - pending
+    TRIAL:
+      - aborted
+      - aborting
+      - defective
+      - dispatching
+      - executing
+      - failed
+      - passed
+      - pending
+    SCRIPT:
+      - aborted
+      - defective
+      - executing
+      - failed
+      - passed
+      - pending
+      - skipped
+      - waiting
+    FINISHED:
+      - aborted
+      - defective
+      - failed
+      - passed
+      - skipped
+    IN_PROGRESS:
+      - aborting
+      - dispatching
+      - executing

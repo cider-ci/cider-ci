@@ -1,0 +1,78 @@
+#!/usr/bin/env ruby
+
+require 'pry'
+require 'open3'
+require 'active_support/all'
+
+def exec! cmd
+  Open3.popen3(cmd) do |stdin, stdout, stderr, wait_thr|
+    exit_status = wait_thr.value
+    stdout.read.strip
+  end
+end
+
+
+PROJECTES = [
+  'builder',
+  'demo-project-bash',
+  'documentation-source',
+  'dispatcher',
+  'executor',
+  'notifier',
+  'repository',
+  'storage'
+  ]
+
+PROPERTIES = {
+  '_cider-ci_generate-tasks' => 'generate_tasks',
+  '_cider-ci_include' => 'include_file',
+  'aggregate-state' => 'aggregate_state',
+  'content-type' => 'content_type',
+  'depends-on' => 'depends_on',
+  'dispatch-storm-delay-duration' =>  'dispatch_storm_delay_duration',
+  'eager-trials' => 'eager_trials',
+  'environment-variables' => 'environment_variables',
+  'exclude-match' => 'exclude_match',
+  'exclusive-global-resources' => 'exclusive_global_resources',
+  'exclusive_executor_resource' => 'exclusive_executor_resource',
+  'git-options' => 'git_options',
+  'ignore-abort' => 'ignore_abort',
+  'ignore-state' => 'ignore_state',
+  'include-match' => 'include_match',
+  'max-auto-trials' => 'max_trials',
+  'run-on' => 'run_on',
+  'script-defaults' => 'script_defaults',
+  'start-when' => 'start_when',
+  'task-defaults' => 'task_defaults',
+  'template-environment-variables' => 'template_environment_variables',
+  'terminate-when' => 'terminate_when',
+  'tree-attachments' => 'tree_attachments',
+  'trial-attachments' => 'trial_attachments',
+}
+
+CIDER_CI_MAIN_DIR = \
+  Pathname(File.dirname(File.absolute_path(__FILE__))).parent
+
+
+PROJECTES.each do |project|
+
+  puts <<-MSG.strip_heredoc
+    ####################################################################
+    # #{project}
+    ####################################################################
+  MSG
+
+  Dir.chdir CIDER_CI_MAIN_DIR.join(project) do
+
+    PROPERTIES.each do |property,replacement|
+      puts "## #{property} => #{replacement}"
+      cmd = <<-CMD.strip_heredoc
+        #!/usr/bin/env bash
+        egrep -R -l #{property} --include '.haml' --include '.md' --include '*.yml' --include '*.rb' --include '*.clj' * \
+          | xargs -o -I {} vim '+%s/#{property}/#{replacement}/gI'  '+wq' {}
+      CMD
+      exec! cmd
+    end
+  end
+end
+

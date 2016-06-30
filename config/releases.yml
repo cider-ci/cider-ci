@@ -1,5 +1,37 @@
 releases:
 
+- version_major: 4
+  version_minor: 0
+  version_patch: 0
+  version_pre: NULL
+  version_build: NULL
+  edition: NULL
+  name: Euler
+  about-name: |
+
+    Leonhard Euler, born in Basel (Switzerland), was one of the leading
+    mathematicians of the 18th Century.
+
+  description: |
+
+    * Add new state: `defective`.
+    * Validate job specifications.
+    * Executors can perform self-updates.
+    * Import data via rake tasks.
+    * Dispatch via pull mode only.
+    * Add filters on branches to repositories with defaults to let any trigger pass.
+    * Create tasks within a transaction.
+    * Validate version on executor: Executors with version differing from the
+      server will be marked and excluded as a dispatch target.
+    * Template the exclusive_executor_resource value.
+    * Improve, re-implement and test the dispatch timeout sweeper.
+    * Drop support for Ubuntu 14.04, add support for Ubuntu 16.04.
+    * Remove message broker RabbitMQ and use PostgreSQL for messaging.
+    * Rewrite the automated deployment: drop support for Ansible 1
+      and support Ansible 2.
+
+###############################################################################
+
 - version_major: 3
   version_minor: 14
   version_patch: 0
