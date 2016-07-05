@@ -2,6 +2,26 @@ releases:
 
 - version_major: 4
   version_minor: 0
+  version_patch: 1
+  version_pre: NULL
+  version_build: NULL
+  edition: NULL
+  name: Euler
+  about-name: |
+    Leonhard Euler, born in Basel (Switzerland), was one of the leading
+    mathematicians of the 18th Century.
+  description: |
+    Changes and fixes
+
+    * Fix: don't loose the trial when a sync response gets lost.
+    * Configure the `trial_dispatch_timeout`.
+    * Fix: quick install (install required system ruby explicitly).
+    * Add LXD trait (BETA!).
+    * Add git-crypt trait.
+
+
+- version_major: 4
+  version_minor: 0
   version_patch: 0
   version_pre: NULL
   version_build: NULL

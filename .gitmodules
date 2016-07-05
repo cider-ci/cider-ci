@@ -18,10 +18,6 @@
 	path = deploy
 	url = https://github.com/cider-ci/cider-ci_deploy.git
 
-[submodule "documentation"]
-	path = documentation
-	url = https://github.com/cider-ci/cider-ci_documentation.git
-
 [submodule "documentation-source"]
 	path = documentation-source
 	url = https://github.com/cider-ci/cider-ci_documentation-source.git
