@@ -2,6 +2,32 @@ releases:
 
 - version_major: 4
   version_minor: 0
+  version_patch: 2
+  version_pre: NULL
+  version_build: NULL
+  edition: NULL
+  name: NULL
+  name: Euler
+  about-name: |
+    Leonhard Euler, born in Basel (Switzerland), was one of the leading
+    mathematicians of the 18th Century.
+  description: |
+    Changes and fixes
+
+    * Extend project validation: catch a more illegal configurations and improve report.
+    * Add the name of a task as a criteria for the dispatch order. This would
+      have have no influence before v4 but does matter now since tasks and first
+      trials are create within a transaction.
+    * UI: change the default filter criteria for tasks to 'unpassed'.
+    * UI: rework links to specifications and API, add page for showing the task-specification.
+
+
+
+###############################################################################
+
+
+- version_major: 4
+  version_minor: 0
   version_patch: 1
   version_pre: NULL
   version_build: NULL
