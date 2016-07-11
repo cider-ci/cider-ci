@@ -38,10 +38,6 @@
 	path = repository
 	url = https://github.com/cider-ci/cider-ci_repository.git
 
-[submodule "reverse-proxy"]
-	path = reverse-proxy
-	url = https://github.com/cider-ci/cider-ci_reverse-proxy.git
-
 [submodule "storage"]
 	path = storage
 	url = https://github.com/cider-ci/cider-ci_storage.git
@@ -49,9 +45,11 @@
 [submodule "user-interface"]
 	path = user-interface
 	url = https://github.com/cider-ci/cider-ci_user-interface.git
+
 [submodule "lein-dev-plugin"]
 	path = lein-dev-plugin
 	url = https://github.com/cider-ci/cider-ci_lein-dev-plugin
+
 [submodule "clj-utils"]
 	path = clj-utils
 	url = https://github.com/cider-ci/cider-ci_clj-utils.git
