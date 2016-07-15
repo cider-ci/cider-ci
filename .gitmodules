@@ -8,7 +8,7 @@
 
 [submodule "dispatcher"]
 	path = dispatcher
-	url = https://github.com/cider-ci/cider-ci_dispatcher.git
+	url = cider-ci_git@cider-ci.com:~/dispatcher
 
 [submodule "demo-project-bash"]
 	path = demo-project-bash
@@ -16,7 +16,7 @@
 
 [submodule "deploy"]
 	path = deploy
-	url = https://github.com/cider-ci/cider-ci_deploy.git
+	url = cider-ci_git@cider-ci.com:~/deploy
 
 [submodule "documentation-source"]
 	path = documentation-source
@@ -24,11 +24,11 @@
 
 [submodule "executor"]
 	path = executor
-	url = https://github.com/cider-ci/cider-ci_executor.git
+	url = cider-ci_git@cider-ci.com:~/executor
 
 [submodule "integration-tests"]
 	path = integration-tests
-	url = https://github.com/cider-ci/cider-ci_integration-tests.git
+	url = cider-ci_git@cider-ci.com:~/integration-tests
 
 [submodule "notifier"]
 	path = notifier
@@ -36,7 +36,7 @@
 
 [submodule "repository"]
 	path = repository
-	url = https://github.com/cider-ci/cider-ci_repository.git
+	url = cider-ci_git@cider-ci.com:~/repository
 
 [submodule "storage"]
 	path = storage

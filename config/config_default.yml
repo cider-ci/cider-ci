@@ -28,7 +28,7 @@ session:
   secret: session-secret
   max_lifetime: 7 Days
 
-git_proxy_enabled: false
+git_proxy_enabled: true
 
 messaging:
   connection:

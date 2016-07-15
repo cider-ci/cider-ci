@@ -8,10 +8,6 @@ and <http://docs.cider-ci.info/introduction/>.
 This is the main repository of Cider-CI. The Cider-CI components are referenced
 from this repository as git submodules.
 
-## Status
-
-[![Integration-Tests](http://ci.zhdk.ch/cider-ci/ui/public/Cider-CI/master/Integration-Tests/summary.svg?respond_with_200&orientation=vertical =250x)](http://ci.zhdk.ch/cider-ci/ui/public/Cider-CI/master/Integration-Tests/summary.html)
-
 
 Contributors
 ------------
@@ -28,7 +24,13 @@ License
 -------
 
 Each component/submodule comes with its own License.
-The core componentes use the [GNU Affero General Public License Version 3][].
+
+This is the PRO version of Cider-CI.
+
+Copyright 2013-2016 © Thomas Schank <Thomas.Schank@AlgoCon.ch>.
+
+All rights reserved!
+
 
 
 Contributing to Cider-CI
