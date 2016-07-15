@@ -2,7 +2,7 @@ jobs:
 
   builder-tests:
     name: Builder Tests
-    run_when:
+    run_when: &RUN_WHEN_DEFAULTS
       any branch matches:
         type: branch
         include_match: ^.*$
@@ -13,10 +13,7 @@ jobs:
 
   integration-tests:
     name: Cider-CI RSpec Integration Tests
-    run_when:
-      'any branch is updated':
-        type: branch
-        include_match: '^.*$'
+    run_when: *RUN_WHEN_DEFAULTS
     context:
       include:
       - path: cider-ci/contexts/integration-tests.yml
@@ -24,13 +21,20 @@ jobs:
 
   build:
     name: Build the Cider-CI Archive
-    run_when:
-      integration tests have passed:
-        type: job
-        job_key: integration-tests
-        states: [passed]
+    # depends_on:
+    #   integration-tests: {job_key: integration-tests,   type: job, states: [passed]}
+    run_when: *RUN_WHEN_DEFAULTS
     context:
       include:
       - path: cider-ci/contexts/build.yml
         submodule: ['deploy']
 
+  test-container-deploy:
+    depends_on:
+      integration-tests: {job_key: build,   type: job, states: [passed]}
+    name: Test Deploy to a Container
+    run_when: *RUN_WHEN_DEFAULTS
+    context:
+      include:
+        - path: container-test/cider-ci/context.yml
+          submodule: [deploy]

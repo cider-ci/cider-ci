@@ -2,6 +2,26 @@ releases:
 
 - version_major: 4
   version_minor: 0
+  version_patch: 3
+  version_pre: NULL
+  version_build: NULL
+  edition: NULL
+  name: NULL
+  name: Euler
+  about-name: |
+    Leonhard Euler, born in Basel (Switzerland), was one of the leading
+    mathematicians of the 18th Century.
+  description: |
+    Changes and fixes:
+
+      * Fix performance issues with the database of the server.
+      * Improve stability and minor fixes for the deploy process.
+      * Sweep working directories on executors every second instead of every minute.
+
+
+
+- version_major: 4
+  version_minor: 0
   version_patch: 2
   version_pre: NULL
   version_build: NULL
@@ -20,10 +40,6 @@ releases:
       trials are create within a transaction.
     * UI: change the default filter criteria for tasks to 'unpassed'.
     * UI: rework links to specifications and API, add page for showing the task-specification.
-
-
-
-###############################################################################
 
 
 - version_major: 4
