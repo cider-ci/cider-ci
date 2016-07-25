@@ -1,7 +1,73 @@
-_cider-ci_include:
-  - path: cider-ci/tests.yml
-    submodule: ['builder']
-  - path: cider-ci/jobs/integration-tests.yml
-    submodule: ['integration-tests']
-  - path: cider-ci/build.yml
-    submodule: ['deploy']
+jobs:
+
+  builder-tests:
+    name: Builder Tests
+    run_when: &RUN_WHEN_DEFAULTS
+      any branch matches:
+        type: branch
+        include_match: ^.*$
+    context:
+      task_defaults:
+        include: cider-ci/task-components/lein-test.yml
+        environment_variables:
+          SUBMODULE: builder
+      # generate_tasks:
+      #   include_match: ^test/.*clj$
+      #   submodule: [builder]
+      task: {scripts: {test: {body: 'cd $SUBMODULE && lein test'}}}
+
+  repository-tests:
+    name: Repository Tests
+    run_when: *RUN_WHEN_DEFAULTS
+    context:
+      task_defaults:
+        include: cider-ci/task-components/lein-test.yml
+        environment_variables:
+          SUBMODULE: repository
+      # generate_tasks:
+      #   include_match: ^test/.*clj$
+      #   submodule: [builder]
+      task: {scripts: {test: {body: 'cd $SUBMODULE && lein test'}}}
+
+  hot-spots_integration-tests:
+    name: Hot Spots
+    run_when: *RUN_WHEN_DEFAULTS
+    context:
+      include:
+      - path: cider-ci/contexts/hot-spots.yml
+        submodule: ['integration-tests']
+      generate_tasks:
+        include_match: ^.*json_spec.*$
+        submodule: [integration-tests]
+
+  integration-tests:
+    name: Integration Tests
+    run_when: *RUN_WHEN_DEFAULTS
+    depends_on:
+      hot-spots: {job_key: hot-spots_integration-tests, type: job, states: [passed]}
+      builder: {job_key: builder-tests, type: job, states: [passed]}
+      repository: {job_key: repository-tests, type: job, states: [passed]}
+    context:
+      include:
+      - path: cider-ci/contexts/integration-tests.yml
+        submodule: ['integration-tests']
+
+  build:
+    name: Build the Cider-CI Archive
+    run_when: *RUN_WHEN_DEFAULTS
+    depends_on:
+      integration-tests: {job_key: integration-tests,   type: job, states: [passed]}
+    context:
+      include:
+      - path: cider-ci/contexts/build.yml
+        submodule: ['deploy']
+
+  test-container-deploy:
+    run_when: *RUN_WHEN_DEFAULTS
+    depends_on:
+      build: {job_key: build,   type: job, states: [passed]}
+    name: Test Deploy to a Container
+    context:
+      include:
+        - path: container-test/cider-ci/context.yml
+          submodule: [deploy]

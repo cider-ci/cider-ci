@@ -1,0 +1,13 @@
+git_options:
+  submodules:
+    include_match: ^.*$
+traits:
+  Leiningen 2: yes
+  JDK 8: yes
+scripts:
+  test:
+    body: |
+      #!/bin/bash
+      set -eux
+      cd $SUBMODULE
+      lein test $CIDER_CI_TASK_FILE

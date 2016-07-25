@@ -1,5 +1,48 @@
 releases:
 
+### 4.1 #######################################################################
+
+- version_major: 4
+  version_minor: 1
+  version_patch: 0
+  version_pre: NULL
+  version_build: NULL
+  edition: NULL
+  name: Gran Zebrù
+  about-name: |
+    ![Gran Zebrù - Monte Zebrù - Ortles](./zebru-ortles.jpg)
+
+    The [Gran Zebrù](https://en.wikipedia.org/wiki/Gran_Zebr%C3%B9) is the
+    mountain on the left.
+
+  description: |
+
+    # New Features
+
+    * The load for a task can now be set. It used to be the fixed value one.
+      This is not to overload the executors, or not use them efficiently,
+      when there are tasks causing different loads.
+
+    * The new directive `read_and_replace_with` will read an arbitrary file
+      from the source code and include it as as string value in the project
+      configuration. This can be used e.g. to set environment variables.
+
+    * Add a new project configuration directive: `read_and_replace_with`, see
+      <https://github.com/cider-ci/cider-ci_demo-project-bash/commit/273687ebe027e1bd23e00671606256232a46ff1c>.
+
+    * Support :generate_tasks for submodules officially. Make :generate_tasks
+      easier and less obscure to debug by defer generation from delivering
+      the project configuration to to the point when the project specification is
+      generated.
+
+
+    # Other Changes and fixes
+
+    * Executor: Fix mangling of environment variables.
+
+
+###############################################################################
+
 - version_major: 4
   version_minor: 0
   version_patch: 3
