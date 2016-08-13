@@ -28,7 +28,10 @@ releases:
     * Prevent systems from crashing due to excessive logging by
        configuring rails services to log through journald instead to files.
 
+    * Fix fail to clean working dirs under certain circumstances (symlinks etc).
+      Erase working dirs by OS command rather via java.
 
+    * Do not garbage collect preemptively when checking memory of Java services.
 
 
 - version_major: 4
