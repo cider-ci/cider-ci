@@ -4,6 +4,23 @@ releases:
 
 - version_major: 4
   version_minor: 1
+  version_patch: 1
+  version_pre: NULL
+  version_build: NULL
+  edition: NULL
+  name: Gran Zebrù
+  about-name: |
+    ![Gran Zebrù - Monte Zebrù - Ortles](./zebru-ortles.jpg)
+
+    The [Gran Zebrù](https://en.wikipedia.org/wiki/Gran_Zebr%C3%B9) is the
+    mountain on the left.
+
+  description: |
+
+    TODO
+
+- version_major: 4
+  version_minor: 1
   version_patch: 0
   version_pre: NULL
   version_build: NULL
