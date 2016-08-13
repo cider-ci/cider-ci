@@ -17,7 +17,19 @@ releases:
 
   description: |
 
-    TODO
+    Fixes
+    =====
+
+    * Remove whitespace from content given by read_and_replace_with.
+
+    * Prevent systems from crashing due to excessive logging by restoring a
+        Systemd default overridden by Debian.
+
+    * Prevent systems from crashing due to excessive logging by
+       configuring rails services to log through journald instead to files.
+
+
+
 
 - version_major: 4
   version_minor: 1
