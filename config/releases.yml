@@ -20,6 +20,8 @@ releases:
     Fixes
     =====
 
+    * Reset the original git url as the origin of the working dir.
+
     * Upgrade libraries for the user-interface including a security update.
 
     * Do not garbage collect when requesting the status of the user-interface.
