@@ -4,12 +4,12 @@ releases:
 
 - version_major: 4
   version_minor: 1
-  version_patch: 2
+  version_patch: 3
   version_pre: NULL
   version_build: NULL
   edition: NULL
   name: Gran Zebrù
-  about-name: |
+  about-name: &about-gran-zebru |
     ![Gran Zebrù - Monte Zebrù - Ortles](./zebru-ortles.jpg)
 
     The [Gran Zebrù](https://en.wikipedia.org/wiki/Gran_Zebr%C3%B9) is the
@@ -20,17 +20,28 @@ releases:
     Fixes
     =====
 
+    * Fix stack overflow crashes of the ui service.
+
+
+- version_major: 4
+  version_minor: 1
+  version_patch: 2
+  version_pre: NULL
+  version_build: NULL
+  edition: NULL
+  name: Gran Zebrù
+  about-name: *about-gran-zebru
+
+  description: |
+
+    Fixes
+    =====
+
     * Set the memory of the ui service explicitly.
-
     * Reset the original git url as the origin of the working dir.
-
     * Upgrade libraries for the user-interface including a security update.
-
     * Do not garbage collect when requesting the status of the user-interface.
-
     * Improve monitoring.
-
-
 
 
 
@@ -41,28 +52,19 @@ releases:
   version_build: NULL
   edition: NULL
   name: Gran Zebrù
-  about-name: |
-    ![Gran Zebrù - Monte Zebrù - Ortles](./zebru-ortles.jpg)
-
-    The [Gran Zebrù](https://en.wikipedia.org/wiki/Gran_Zebr%C3%B9) is the
-    mountain on the left.
-
+  about-name: *about-gran-zebru
   description: |
 
     Fixes
     =====
 
     * Remove whitespace from content given by read_and_replace_with.
-
     * Prevent systems from crashing due to excessive logging by restoring a
         Systemd default overridden by Debian.
-
     * Prevent systems from crashing due to excessive logging by
        configuring rails services to log through journald instead to files.
-
     * Fix fail to clean working dirs under certain circumstances (symlinks etc).
       Erase working dirs by OS command rather via java.
-
     * Do not garbage collect preemptively when checking memory of Java services.
 
 
@@ -73,11 +75,7 @@ releases:
   version_build: NULL
   edition: NULL
   name: Gran Zebrù
-  about-name: |
-    ![Gran Zebrù - Monte Zebrù - Ortles](./zebru-ortles.jpg)
-
-    The [Gran Zebrù](https://en.wikipedia.org/wiki/Gran_Zebr%C3%B9) is the
-    mountain on the left.
+  about-name: *about-gran-zebru
 
   description: |
 
