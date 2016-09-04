@@ -37,14 +37,14 @@ jobs:
       - path: cider-ci/contexts/hot-spots.yml
         submodule: ['integration-tests']
       generate_tasks:
-        include_match: ^.*json_spec.*$
+        include_match: ^.*project-management_spec.*$
         submodule: [integration-tests]
 
   integration-tests:
     name: Integration Tests
     run_when: *RUN_WHEN_DEFAULTS
     depends_on:
-      hot-spots: {job_key: hot-spots_integration-tests, type: job, states: [passed]}
+      # hot-spots: {job_key: hot-spots_integration-tests, type: job, states: [passed]}
       builder: {job_key: builder-tests, type: job, states: [passed]}
       repository: {job_key: repository-tests, type: job, states: [passed]}
     context:

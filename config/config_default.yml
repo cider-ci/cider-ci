@@ -112,24 +112,6 @@ services:
       ssl: false
 
 
-  notifier:
-
-    http:
-      host: 127.0.0.1
-      port: 8887
-      context: /cider-ci
-      sub_context: /notifier
-      ssl: false
-
-    nrepl:
-      port: 7887
-      bind: "127.0.0.1"
-      enabled: true
-
-    database:
-      max_pool_size: 3
-
-
   repository:
 
     http:

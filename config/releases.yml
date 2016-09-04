@@ -1,5 +1,31 @@
 releases:
 
+
+### 4.2 #######################################################################
+
+- version_major: 4
+  version_minor: 2
+  version_patch: 0
+  version_pre: 2.0
+  version_build: NULL
+  edition: NULL
+
+  description: |
+
+    Changes
+    =======
+
+    * Add new, dynamic UI for managing projects.
+    * Move from jetty to aleph.
+    * Move notification code to repository, retire notification service.
+
+    Fixes
+    =====
+
+    * Increase waiting time for services during deploy.
+
+
+
 ### 4.1 #######################################################################
 
 - version_major: 4
