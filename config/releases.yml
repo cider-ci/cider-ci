@@ -6,7 +6,7 @@ releases:
 - version_major: 4
   version_minor: 2
   version_patch: 0
-  version_pre: 3.0
+  version_pre: 4.0
   version_build: NULL
   edition: NULL
 
@@ -19,6 +19,7 @@ releases:
     * Add new API for managing projects.
     * Move from jetty to aleph.
     * Move notification code to repository, retire notification service.
+    * Do not re-dispatch to defecting executors within configured delay.
 
     Fixes
     =====
