@@ -33,11 +33,13 @@ jobs:
     name: Hot Spots
     run_when: *RUN_WHEN_DEFAULTS
     context:
+      task_defaults:
+        priority: 10
       include:
       - path: cider-ci/contexts/hot-spots.yml
         submodule: ['integration-tests']
       generate_tasks:
-        include_match: ^.*json_spec.*$
+        include_match: ^.*(gitlab).*_spec\.rb$
         submodule: [integration-tests]
 
   integration-tests:

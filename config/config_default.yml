@@ -6,6 +6,8 @@ trial_dispatch_timeout: 30 Minutes
 
 dispatch_storm_delay_default_duration: 1 Second
 
+max_concurrent_fetch_and_updates: 3
+
 database:
   adapter: "postgresql"
   classname: "org.postgresl.Driver"
@@ -110,24 +112,6 @@ services:
       context: /cider-ci
       sub_context: /documentation
       ssl: false
-
-
-  notifier:
-
-    http:
-      host: 127.0.0.1
-      port: 8887
-      context: /cider-ci
-      sub_context: /notifier
-      ssl: false
-
-    nrepl:
-      port: 7887
-      bind: "127.0.0.1"
-      enabled: true
-
-    database:
-      max_pool_size: 3
 
 
   repository:

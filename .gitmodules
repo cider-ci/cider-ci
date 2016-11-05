@@ -30,10 +30,6 @@
 	path = integration-tests
 	url = cider-ci_git@cider-ci.com:~/integration-tests
 
-[submodule "notifier"]
-	path = notifier
-	url = https://github.com/cider-ci/cider-ci_notifier.git
-
 [submodule "repository"]
 	path = repository
 	url = cider-ci_git@cider-ci.com:~/repository
@@ -53,6 +49,7 @@
 [submodule "clj-utils"]
 	path = clj-utils
 	url = https://github.com/cider-ci/cider-ci_clj-utils.git
+
 [submodule "documentation"]
 	path = documentation
 	url = https://github.com/cider-ci/cider-ci_documentation.git

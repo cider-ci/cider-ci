@@ -17,9 +17,11 @@ fi
 git tag -s "$1" -m "Cider-CI version $1"
 git tag -s "Cider-CI_$1" -m "Cider-CI version $1"
 git push github HEAD:master
+git push github HEAD:release
 
 git submodule foreach "git tag -s 'Cider-CI_$1' -m 'Cider-CI version $1'"
 git submodule foreach "git push github HEAD:master"
+git submodule foreach "git push github HEAD:release"
 
 git push github --tags
 git submodule foreach 'git push github --tags'
