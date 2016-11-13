@@ -39,7 +39,7 @@ jobs:
       - path: cider-ci/contexts/hot-spots.yml
         submodule: ['integration-tests']
       generate_tasks:
-        include_match: ^.*(gitlab).*_spec\.rb$
+        include_match: ^.*(gitlab|push-hooks).*_spec\.rb$
         submodule: [integration-tests]
 
   integration-tests:
