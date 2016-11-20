@@ -39,7 +39,7 @@ jobs:
       - path: cider-ci/contexts/hot-spots.yml
         submodule: ['integration-tests']
       generate_tasks:
-        include_match: ^.*(projects-management|trigger).*$
+        include_match: ^.*(trigger).*$
         submodule: [integration-tests]
 
   integration-tests:
