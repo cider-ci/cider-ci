@@ -5,12 +5,12 @@ releases:
 
 - version_major: 4
   version_minor: 2
-  version_patch: 5
+  version_patch: 6
   version_pre: NULL
   version_build: NULL
   edition: NULL
   name: Monte Zebrù
-  about-name: &about-gran-zebru |
+  about-name: &about-monte-zebru |
     ![Gran Zebrù - Monte Zebrù - Ortles](./zebru-ortles.jpg)
 
     The [Monte Zebrù](https://it.wikipedia.org/wiki/Monte_Zebr%C3%B9) is the
