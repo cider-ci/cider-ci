@@ -5,7 +5,7 @@ releases:
 
 - version_major: 4
   version_minor: 2
-  version_patch: 6
+  version_patch: 7
   version_pre: NULL
   version_build: NULL
   edition: NULL
@@ -32,7 +32,6 @@ releases:
     =====
 
     * Increase waiting time for services during deploy.
-
 
 
 ### 4.1 #######################################################################
