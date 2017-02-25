@@ -1,11 +1,39 @@
 releases:
 
+### 4.3 #######################################################################
+
+#- version_major: 4
+#  version_minor: 3
+#  version_patch: 0
+#  version_pre: 18
+#  name: Orltes
+#  version_build: NULL
+#  edition: NULL
+#
+#  about-name: &about-monte-ortles |
+#    ![Gran Zebrù - Monte Zebrù - Ortles](./zebru-ortles.jpg)
+#
+#    The [Ortles](https://it.wikipedia.org/wiki/Ortles) is the
+#    mountain on the right.
+#
+#
+#  description: |
+#
+#    Changes
+#    =======
+#
+#    ## New Features and Fixes
+#
+#
+#
+#    ## Description of the Technical and Internal Changes
+
 
 ### 4.2 #######################################################################
 
 - version_major: 4
   version_minor: 2
-  version_patch: 7
+  version_patch: 8
   version_pre: NULL
   version_build: NULL
   edition: NULL
@@ -21,18 +49,31 @@ releases:
     Changes
     =======
 
-    * Add new, dynamic UI for managing projects.
+    * A job and its tasks are created much faster.
+    * A job without tasks will be set to defective but pass with an warning.
     * Add new API for managing projects.
-    * Manage, i.e. check and set repository hooks for push notification automatically.
-    * Move from jetty to aleph.
-    * Move notification code to repository, retire notification service.
+    * Add new, dynamic UI for managing projects.
     * Do not re-dispatch to defecting executors within configured delay.
+    * Manage, i.e. check and set repository hooks for push notification automatically.
+    * Move notification code to repository, retire notification service.
 
     Fixes
     =====
 
     * Increase waiting time for services during deploy.
+    * Fix prevent recreation of already existing jobs via triggers.
+    * Remove tree issues automatically if they have been resolved.
+    * Mitigate the 'trial lost on executor' problem.
 
+    Noteworthy Internal and Technical Changes
+    =========================================
+
+    * Create tasks in batches.
+    * Increase sync timeout on executors to mitigate the 'trial lost on executor' problems.
+    * Move from jetty to aleph.
+    * Resolve separate transaction issues "jobs without tasks".
+    * The created_at timestamp for trials is ignored when dispatching trials.
+    * Unify the fife clojure services into just one.
 
 ### 4.1 #######################################################################
 

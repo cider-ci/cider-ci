@@ -1,5 +1,11 @@
-tmp/
+/api
+/builder
+/database
+/deploy_v4/
+/dispatcher
+/storage
+/ui2
 config/config.yml
 docker-deploy/
 log/
-/deploy_v4/
+tmp/

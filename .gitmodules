@@ -1,15 +1,3 @@
-[submodule "api"]
-	path = api
-	url = https://github.com/cider-ci/cider-ci_api.git
-
-[submodule "builder"]
-	path = builder
-	url = https://github.com/cider-ci/cider-ci_builder.git
-
-[submodule "dispatcher"]
-	path = dispatcher
-	url = https://github.com/cider-ci/cider-ci_dispatcher.git
-
 [submodule "demo-project-bash"]
 	path = demo-project-bash
 	url = https://github.com/cider-ci/cider-ci_demo-project-bash.git
@@ -30,13 +18,9 @@
 	path = integration-tests
 	url = https://github.com/cider-ci/cider-ci_integration-tests.git
 
-[submodule "repository"]
-	path = repository
-	url = https://github.com/cider-ci/cider-ci_repository.git
-
-[submodule "storage"]
-	path = storage
-	url = https://github.com/cider-ci/cider-ci_storage.git
+[submodule "server"]
+	path = server
+	url = https://github.com/cider-ci/cider-ci_server.git
 
 [submodule "user-interface"]
 	path = user-interface
