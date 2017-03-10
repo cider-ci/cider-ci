@@ -6,6 +6,7 @@ jobs:
       any branch matches:
         type: branch
         include_match: ^.*$
+    priority: 1
     context:
       include:
       - path: cider-ci/contexts/hot-spots.yml
@@ -14,10 +15,10 @@ jobs:
         priority: 10
         #traits:
         #  g2016: true
-        max_trials: 3
-        eager_trials: 3
+        max_trials: 5
+        eager_trials: 2
       generate_tasks:
-        include_match: ^.*(json).*$
+        include_match: ^.*(cron|trigger).*$
         submodule: [integration-tests]
 #      tasks:
 #        spec/features/branch-triggers_demo-repo_spec.rb:

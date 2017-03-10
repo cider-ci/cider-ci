@@ -2,31 +2,34 @@ releases:
 
 ### 4.3 #######################################################################
 
-#- version_major: 4
-#  version_minor: 3
-#  version_patch: 0
-#  version_pre: 18
-#  name: Orltes
-#  version_build: NULL
-#  edition: NULL
-#
-#  about-name: &about-monte-ortles |
-#    ![Gran Zebrù - Monte Zebrù - Ortles](./zebru-ortles.jpg)
-#
-#    The [Ortles](https://it.wikipedia.org/wiki/Ortles) is the
-#    mountain on the right.
-#
-#
-#  description: |
-#
-#    Changes
-#    =======
-#
-#    ## New Features and Fixes
-#
-#
-#
-#    ## Description of the Technical and Internal Changes
+- version_major: 4
+  version_minor: 3
+  version_patch: 0
+  version_pre: 20
+  name: Orltes
+  version_build: NULL
+  edition: NULL
+
+  about-name: &about-monte-ortles |
+    ![Gran Zebrù - Monte Zebrù - Ortles](./zebru-ortles.jpg)
+
+    The [Ortles](https://it.wikipedia.org/wiki/Ortles) is the
+    mountain on the right.
+
+
+  description: |
+
+    Changes
+    =======
+
+    ## New Features and Fixes
+
+    * Jobs can be triggered via cron expressions.
+
+
+    ## Description of the Technical and Internal Changes
+
+    * Rewrite trigger code.
 
 
 ### 4.2 #######################################################################
