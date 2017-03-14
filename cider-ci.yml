@@ -1,6 +1,6 @@
 jobs:
 
-  hot-spots_integration-tests:
+  integration-tests_hot-spots:
     name: Hot Spots
     run_when: &RUN_WHEN_DEFAULTS
       any branch matches:
@@ -18,7 +18,7 @@ jobs:
         max_trials: 5
         eager_trials: 2
       generate_tasks:
-        include_match: ^.*(cron|trigger).*$
+        include_match: ^.*(cron).*$
         submodule: [integration-tests]
 #      tasks:
 #        spec/features/branch-triggers_demo-repo_spec.rb:
@@ -27,9 +27,11 @@ jobs:
 
   integration-tests:
     name: Integration Tests
-    run_when: *RUN_WHEN_DEFAULTS
-    depends_on:
-      hot-spots: {job_key: hot-spots_integration-tests, type: job, states: [passed]}
+    run_when:
+      hot-spots-passed:
+        type: job
+        job_key: integration-tests_hot-spots
+        states: [passed]
     context:
       include:
       - path: cider-ci/contexts/integration-tests.yml
@@ -40,16 +42,22 @@ jobs:
 
   build:
     name: Build the Cider-CI Archive
-    run_when: *RUN_WHEN_DEFAULTS
-    #depends_on:
-    #  integration-tests: {job_key: integration-tests,   type: job, states: [passed]}
+    run_when:
+      'integration-tests passed':
+        type: job
+        job_key: integration-tests
+        states: [passed]
     context:
       include:
       - path: cider-ci/contexts/build.yml
         submodule: ['deploy']
 
   test-container-deploy:
-    run_when: *RUN_WHEN_DEFAULTS
+    run_when:
+      'build passed':
+        type: job
+        job_key: build
+        states: [passed]
     depends_on:
       build: {job_key: build,   type: job, states: [passed]}
     name: Test Deploy to a Container
