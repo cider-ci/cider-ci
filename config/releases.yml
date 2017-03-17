@@ -5,7 +5,7 @@ releases:
 - version_major: 4
   version_minor: 3
   version_patch: 0
-  version_pre: 21
+  version_pre: 22
   name: Orltes
   version_build: NULL
   edition: NULL
@@ -25,6 +25,8 @@ releases:
     ## New Features and Fixes
 
     * Jobs can be triggered via cron expressions.
+    * Cron controlled jobs can be set to be rerun.
+    * Expose the current branch names via CIDER_CI_CURRENT_BRANCH_HEADS.
 
 
     ## Description of the Technical and Internal Changes
