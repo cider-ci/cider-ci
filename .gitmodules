@@ -20,7 +20,7 @@
 
 [submodule "server"]
 	path = server
-	url = https://github.com/cider-ci/cider-ci_server.git
+	url = cider-ci_git@cider-ci.com:~/integration-tests
 
 [submodule "user-interface"]
 	path = user-interface

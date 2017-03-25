@@ -63,6 +63,9 @@ services:
 
   server:
 
+    git-http:
+      port: 8891
+
     http:
       host: 127.0.0.1
       port: 8881
