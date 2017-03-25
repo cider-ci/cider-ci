@@ -4,7 +4,7 @@
 
 [submodule "deploy"]
 	path = deploy
-	url = https://github.com/cider-ci/cider-ci_deploy.git
+	url = cider-ci_git@cider-ci.com:~/deploy
 
 [submodule "documentation-source"]
 	path = documentation-source
@@ -12,11 +12,11 @@
 
 [submodule "executor"]
 	path = executor
-	url = https://github.com/cider-ci/cider-ci_executor.git
+	url = cider-ci_git@cider-ci.com:~/executor
 
 [submodule "integration-tests"]
 	path = integration-tests
-	url = https://github.com/cider-ci/cider-ci_integration-tests.git
+	url = cider-ci_git@cider-ci.com:~/integration-tests
 
 [submodule "server"]
 	path = server

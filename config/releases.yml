@@ -41,7 +41,7 @@ releases:
   version_patch: 8
   version_pre: NULL
   version_build: NULL
-  edition: NULL
+  edition: PRO
   name: Monte Zebrù
   about-name: &about-monte-zebru |
     ![Gran Zebrù - Monte Zebrù - Ortles](./zebru-ortles.jpg)
@@ -87,7 +87,7 @@ releases:
   version_patch: 3
   version_pre: NULL
   version_build: NULL
-  edition: NULL
+  edition: PRO
   name: Gran Zebrù
   about-name: &about-gran-zebru |
     ![Gran Zebrù - Monte Zebrù - Ortles](./zebru-ortles.jpg)
@@ -187,10 +187,22 @@ releases:
 
 - version_major: 4
   version_minor: 0
+  version_patch: 4
+  version_pre: 0.0
+  version_build: NULL
+  edition: PRO
+  name: NULL
+  name: Euler
+  about-name: |
+    Leonhard Euler, born in Basel (Switzerland), was one of the leading
+    mathematicians of the 18th Century.
+
+- version_major: 4
+  version_minor: 0
   version_patch: 3
   version_pre: NULL
   version_build: NULL
-  edition: NULL
+  edition: PRO
   name: NULL
   name: Euler
   about-name: |
