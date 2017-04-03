@@ -8,7 +8,7 @@ releases:
   version_pre: 23
   name: Orltes
   version_build: NULL
-  edition: NULL
+  edition: PRO
 
   about-name: &about-monte-ortles |
     ![Gran Zebrù - Monte Zebrù - Ortles](./zebru-ortles.jpg)
