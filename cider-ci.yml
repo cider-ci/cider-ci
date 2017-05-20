@@ -18,7 +18,7 @@ jobs:
         max_trials: 5
         eager_trials: 2
       generate_tasks:
-        include_match: ^.*(cron).*$
+        include_match: ^empty$
         submodule: [integration-tests]
 #      tasks:
 #        spec/features/branch-triggers_demo-repo_spec.rb:
