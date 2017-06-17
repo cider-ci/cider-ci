@@ -10,10 +10,6 @@
 	path = documentation-source
 	url = https://github.com/cider-ci/cider-ci_documentation-source.git
 
-[submodule "executor"]
-	path = executor
-	url = https://github.com/cider-ci/cider-ci_executor.git
-
 [submodule "integration-tests"]
 	path = integration-tests
 	url = https://github.com/cider-ci/cider-ci_integration-tests.git
