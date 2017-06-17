@@ -1,11 +1,11 @@
 releases:
 
-### 4.3 #######################################################################
+### 5.0 #######################################################################
 
-- version_major: 4
-  version_minor: 3
+- version_major: 5
+  version_minor: 0
   version_patch: 0
-  version_pre: 25
+  version_pre: 26
   name: Orltes
   version_build: NULL
   edition: NULL
@@ -27,11 +27,13 @@ releases:
     * Jobs can be triggered via cron expressions.
     * Cron controlled jobs can be set to be rerun.
     * Expose the current branch names via CIDER_CI_CURRENT_BRANCH_HEADS.
-
+    * Add token authentication for users.
 
     ## Description of the Technical and Internal Changes
 
     * Rewrite trigger code.
+    * Unify server and executor code.
+    * Switch to token authentication for executors.
 
 
 ### 4.2 #######################################################################

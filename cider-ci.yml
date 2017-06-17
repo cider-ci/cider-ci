@@ -16,9 +16,9 @@ jobs:
         #traits:
         #  g2016: true
         max_trials: 5
-        eager_trials: 2
+        eager_trials: 5
       generate_tasks:
-        include_match: ^empty$
+        include_match: ^.*NOTING.*$
         submodule: [integration-tests]
 #      tasks:
 #        spec/features/branch-triggers_demo-repo_spec.rb:
@@ -28,10 +28,10 @@ jobs:
   integration-tests:
     name: Integration Tests
     run_when:
-      hot-spots-passed:
+      hot-spots-finished:
         type: job
         job_key: integration-tests_hot-spots
-        states: [passed]
+        states: [passed,failed]
     context:
       include:
       - path: cider-ci/contexts/integration-tests.yml
