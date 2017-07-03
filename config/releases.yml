@@ -5,7 +5,7 @@ releases:
 - version_major: 5
   version_minor: 0
   version_patch: 0
-  version_pre: 27
+  version_pre: 28
   name: Ortles
   version_build: NULL
   edition: NULL
