@@ -5,7 +5,7 @@ releases:
 - version_major: 5
   version_minor: 0
   version_patch: 0
-  version_pre: 30
+  version_pre: 31
   name: Ortles
   version_build: NULL
   edition: NULL
@@ -29,6 +29,7 @@ releases:
     * Expose the current branch names via CIDER_CI_CURRENT_BRANCH_HEADS.
     * Add token authentication for users.
     * Executors can be managed via the API.
+    * Item of "accepted_repository" can be a regex (recognized by a preceding ^ and trailing $).
 
     ## Description of the Technical and Internal Changes
 
