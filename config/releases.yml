@@ -5,7 +5,7 @@ releases:
 - version_major: 5
   version_minor: 0
   version_patch: 0
-  version_pre: 34
+  version_pre: 35
   name: Ortles
   version_build: NULL
   edition: NULL
@@ -24,7 +24,7 @@ releases:
 
     ## New Features and Fixes
 
-    * Visualize dependencies between projects.
+    * Visualize dependencies between projects.t
     * Jobs can be triggered via cron expressions.
     * Cron controlled jobs can be set to be rerun.
     * Expose the current branch names via CIDER_CI_CURRENT_BRANCH_HEADS.
