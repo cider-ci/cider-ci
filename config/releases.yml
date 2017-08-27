@@ -5,9 +5,9 @@ releases:
 - version_major: 5
   version_minor: 0
   version_patch: 0
-  version_pre: 38
+  version_pre: 39
   name: Ortles
-  version_build: NULL
+  version_build: 1
   edition: NULL
 
   about-name: &about-monte-ortles |
