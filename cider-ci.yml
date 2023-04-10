@@ -13,8 +13,6 @@ jobs:
         submodule: ['integration-tests']
       task_defaults:
         priority: 10
-        #traits:
-        #  g2016: true
         max_trials: 5
         eager_trials: 5
       generate_tasks:
