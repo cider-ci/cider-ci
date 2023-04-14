@@ -27,10 +27,12 @@ jobs:
   integration-tests:
     name: Integration Tests
     run_when:
-      hot-spots-finished:
+      hot-spots:
         type: job
         job_key: integration-tests_hot-spots
-        states: [passed,failed]
+        states: 
+          - passed
+        # - finished
     context:
       include:
       - path: cider-ci/contexts/integration-tests.yml
