@@ -18,10 +18,11 @@ jobs:
       generate_tasks:
         include_match: ^.*NOTING.*$
         submodule: [integration-tests]
-#      tasks:
-#        spec/features/branch-triggers_demo-repo_spec.rb:
-#          environment_variables:
-#            CIDER_CI_TASK_FILE: spec/features/branch-triggers_demo-repo_spec.rb:35
+      tasks:
+        spec/features/contexts_spec.rb:
+          environment_variables:
+            CIDER_CI_TASK_FILE: spec/features/contexts_spec.rb
+
 
   integration-tests:
     name: Integration Tests
