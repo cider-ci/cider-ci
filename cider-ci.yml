@@ -14,7 +14,7 @@ jobs:
       task_defaults:
         priority: 10
         max_trials: 5
-        eager_trials: 5
+        eager_trials: 1
       generate_tasks:
         include_match: ^.*NOTING.*$
         submodule: [integration-tests]
