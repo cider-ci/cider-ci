@@ -1,0 +1,101 @@
+ports:
+  CIDER_CI_TEST_UI_HTTP_PORT:
+    min: 3300
+    max: 3399
+
+environment_variables:
+  RAILS_ENV: test
+
+templates:
+  ui_database:
+    src: "user-interface/cider-ci/templates/database.yml"
+    dest: "user-interface/config/database.yml"
+
+scripts:
+
+  ci-ui_setup-ruby:
+    exclusive_executor_resource: ui-ruby
+    body: |
+      #!/usr/bin/env bash
+      set -euo pipefail
+      cd $CIDER_CI_TEST_UI_DIR
+      ./bin/env/ruby-setup
+      bundle
+
+  ci-ui_install-all-deps-and-tools:
+    start_when:
+      ci-ui_setup-ruby passed:
+        script_key: ci-ui_setup-ruby
+    body: exit 0
+
+
+  ci-ui_check-database-config:
+    body: |
+      #!/usr/bin/env bash
+      set -euo pipefail
+      test -f $CIDER_CI_TEST_UI_DIR/config/database.yml
+      cat $CIDER_CI_TEST_UI_DIR/config/database.yml
+
+  ci-ui_ready-to-run:
+    start_when:
+      ci-ui_install-all-deps-and-tools passed:
+        script_key: ci-ui_install-all-deps-and-tools
+      ci-ui_check-database-config passed:
+        script_key: ci-ui_check-database-config
+    body: exit 0
+
+
+  ci-ui_run:
+    start_when:
+      services_ready_to_run passed:
+        script_key: services_ready_to_run
+    body: |
+      #!/usr/bin/env bash
+      set -euo pipefail
+      cd $CIDER_CI_TEST_UI_DIR
+      mkdir -p tmp/pids/
+      bundle exec puma \
+        -e production \
+        -t 1:2 \
+        -w 2\
+        -b tcp://localhost:${CIDER_CI_TEST_UI_HTTP_PORT}
+
+
+  ci-ui_is-running:
+    start_when:
+      ci-ui_run is executing:
+        script_key: ci-ui_run
+        states: [executing]
+    timeout: 10 Seconds
+    body: |
+      #!/usr/bin/env bash
+      set -euo pipefail
+      until curl --silent --fail \
+        -o /dev/null "http://localhost:${CIDER_CI_TEST_UI_HTTP_PORT}/cider-ci/ui" \
+      ; do
+        sleep 1;
+      done
+      echo "UI is running"
+
+  test:
+    start_when:
+      ci-ui_is-running passed:
+        script_key: ci-ui_is-running
+
+  ci-ui_shutdown:
+    timeout: 1 Second
+    start_when:
+      'test is in terminal state':
+        script_key: test
+        states: [aborted, defective, passed, failed, skipped]
+    body: |
+      #!/usr/bin/env bash
+      set -euo pipefail
+      kill -INT $(lsof -t -wni tcp:${CIDER_CI_TEST_UI_HTTP_PORT})
+
+
+  database_drop:
+    start_when:
+      ui is terminal:
+        script_key: ci-ui_shutdown
+        states: [aborted, defective, passed, failed, skipped]

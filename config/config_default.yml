@@ -11,10 +11,10 @@ max_concurrent_fetch_and_updates: 3
 database:
   adapter: "postgresql"
   classname: "org.postgresl.Driver"
-  subname: "//localhost:5432/cider-ci_v4"
+  subname: "//localhost:5415/cider-ci"
   subprotocol: "postgresql"
   user: cider-ci
-  password: secret
+  password: cider-ci
   max_pool_size: 3
 
 github_authtoken: NULL
@@ -39,7 +39,7 @@ messaging:
     username: cider-ci
     password: secret
 
-server_base_url: http://localhost:8888
+server_base_url: http://localhost:3301
 
 
 status_limits:
@@ -65,7 +65,7 @@ services:
 
     http:
       host: 127.0.0.1
-      port: 8881
+      port: 3301
       ssl: false
 
     nrepl:
