@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROJECT_DIR="$(cd -- "$(dirname "${BASH_SOURCE}")" ; cd ../.. > /dev/null 2>&1 && pwd -P)"
+ASDF_PLUGIN=ruby
+ASDF_PLUGIN_URL=https://github.com/asdf-vm/asdf-ruby.git
+
+source $PROJECT_DIR/bin/env/project.sh
+source $PROJECT_DIR/bin/env/asdf-helper.bash
+
+asdf-update-plugin
+bundle install --quiet
+
+# vi: ft=sh

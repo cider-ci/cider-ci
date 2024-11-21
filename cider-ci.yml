@@ -1,25 +1,27 @@
 jobs:
 
-  integration-tests_hot-spots:
-    name: Hot Spots
-    run_when: &RUN_WHEN_DEFAULTS
-      any branch matches:
-        type: branch
-        include_match: ^.*$
-    priority: 1
-    context:
-      include:
-      - path: cider-ci/contexts/hot-spots.yml
-        submodule: ['integration-tests']
-      task_defaults:
-        priority: 10
-        #traits:
-        #  g2016: true
-        max_trials: 5
-        eager_trials: 5
-      generate_tasks:
-        include_match: ^.*NOTING.*$
-        submodule: [integration-tests]
+# integration-tests_hot-spots:
+#   name: Hot Spots
+#   run_when: &RUN_WHEN_DEFAULTS
+#     any branch matches:
+#       type: branch
+#       include_match: ^.*$
+#   priority: 1
+#   context:
+#     include:
+#     - path: cider-ci/contexts/hot-spots.yml
+#       submodule: ['integration-tests']
+#     task_defaults:
+#       priority: 10
+#       #traits:
+#       #  g2016: true
+#       max_trials: 5
+#       eager_trials: 5
+#
+#     generate_tasks:
+#       include_match: ^.*NOTING.*$
+#       submodule: [integration-tests]
+#
 #      tasks:
 #        spec/features/branch-triggers_demo-repo_spec.rb:
 #          environment_variables:
@@ -28,40 +30,53 @@ jobs:
   integration-tests:
     name: Integration Tests
     run_when:
-      hot-spots-finished:
-        type: job
-        job_key: integration-tests_hot-spots
-        states: [passed,failed]
+      any branch has been updated:
+        type: branch
+        include_match: ^.*$
     context:
-      include:
-      - path: cider-ci/contexts/integration-tests.yml
-        submodule: ['integration-tests']
-      task_defaults: {}
-      # traits:
-      #    g2016: true
+      task_defaults:
+        include:
+        - path: cider-ci/task-components/service.yml
+          submodule: ['server']
+        environment_variables:
+          CIDER_CI_TEST_SERVER_DIR: '{{CIDER_CI_WORKING_DIR}}/server'
+        git_options:
+          submodules:
+            include_match: ^.*$
+        traits:
+          - asdf
+      tasks:
+        task_wip:
+          scripts:
+            test:
+              body: |
+                #!/usr/bin/env bash
+                set -eou pipefail
+                echo "OK"
 
-  build:
-    name: Build the Cider-CI Archive
-    run_when:
-      'integration-tests passed':
-        type: job
-        job_key: integration-tests
-        states: [passed]
-    context:
-      include:
-      - path: cider-ci/contexts/build.yml
-        submodule: ['deploy']
 
-  test-container-deploy:
-    run_when:
-      'build passed':
-        type: job
-        job_key: build
-        states: [passed]
-    depends_on:
-      build: {job_key: build,   type: job, states: [passed]}
-    name: Test Deploy to a Container
-    context:
-      include:
-        - path: container-test/cider-ci/context.yml
-          submodule: [deploy]
+# build:
+#   name: Build the Cider-CI Archive
+#   run_when:
+#     'integration-tests passed':
+#       type: job
+#       job_key: integration-tests
+#       states: [passed]
+#   context:
+#     include:
+#     - path: cider-ci/contexts/build.yml
+#       submodule: ['deploy']
+
+# test-container-deploy:
+#   run_when:
+#     'build passed':
+#       type: job
+#       job_key: build
+#       states: [passed]
+#   depends_on:
+#     build: {job_key: build,   type: job, states: [passed]}
+#   name: Test Deploy to a Container
+#   context:
+#     include:
+#       - path: container-test/cider-ci/context.yml
+#         submodule: [deploy]
