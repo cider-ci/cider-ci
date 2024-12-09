@@ -1,0 +1,15 @@
+scripts:
+  ci-ui_setup-ruby:
+    exclusive_executor_resource: ui-ruby
+    body: |
+      #!/bin/bash
+      set -euo pipefail
+      cd $CIDER_CI_TEST_UI_DIR
+      ./bin/env/ruby-setup
+      bundle
+  ci-ui_install-all-deps-and-tools:
+    start_when:
+      ci-ui_setup-ruby passed:
+        script_key: ci-ui_setup-ruby
+    body: exit 0
+
