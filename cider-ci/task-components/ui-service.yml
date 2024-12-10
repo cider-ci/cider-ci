@@ -1,5 +1,5 @@
 
-template:
+templates:
   ui-database:
     src: "{{CIDER_CI_TEST_UI_DIR}}/cider-ci/templates/database.yml"
     test: "{{CIDER_CI_TEST_UI_DIR}}/config/database.yml"
