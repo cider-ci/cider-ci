@@ -35,13 +35,14 @@ jobs:
         include_match: ^.*$
     context:
       task_defaults:
+        environment_variables:
+          CIDER_CI_TEST_SERVER_DIR: '{{CIDER_CI_WORKING_DIR}}/server'
+          CIDER_CI_TEST_UI_DIR: '{{CIDER_CI_WORKING_DIR}}/user-interface'
         include:
         - path: cider-ci/task-components/service.yml
           submodule: ['server']
         - path: cider-ci/task-components/ui-service.yml
-        environment_variables:
-          CIDER_CI_TEST_SERVER_DIR: '{{CIDER_CI_WORKING_DIR}}/server'
-          CIDER_CI_TEST_UI_DIR: '{{CIDER_CI_WORKING_DIR}}/user-interface'
+        - path: cider-ci/task-components/services.yml
         git_options:
           submodules:
             include_match: ^.*$

@@ -1,0 +1,17 @@
+scripts:
+  services_ready_to_run:
+    start_when:
+      ui is ready to run:
+        script_key: ci-ui_ready-to-run
+      server is ready to run:
+        script_key: ci-server_ready-to-run
+    body: |
+      #!/usr/bin/env bash
+      set -euo pipefail
+      echo "Services are ready to run"
+
+  ci-server_run:
+    start_when:
+      services_ready_to_run passed:
+        script_key: services_ready_to_run
+

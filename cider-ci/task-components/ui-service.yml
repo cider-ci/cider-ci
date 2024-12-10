@@ -4,6 +4,7 @@ templates:
     dest: "user-interface/config/database.yml"
 
 scripts:
+
   ci-ui_setup-ruby:
     exclusive_executor_resource: ui-ruby
     body: |
@@ -12,6 +13,7 @@ scripts:
       cd $CIDER_CI_TEST_UI_DIR
       ./bin/env/ruby-setup
       bundle
+
   ci-ui_install-all-deps-and-tools:
     start_when:
       ci-ui_setup-ruby passed:
@@ -20,12 +22,19 @@ scripts:
 
 
   ci-ui_check-database-config:
-    start_when:
-      ci-ui_install-all-deps-and-tools passed:
-        script_key: ci-ui_install-all-deps-and-tools
     body: |
       #!/usr/bin/env bash
-      set -eou pipefail
+      set -euo pipefail
       test -f $CIDER_CI_TEST_UI_DIR/config/database.yml
       cat $CIDER_CI_TEST_UI_DIR/config/database.yml
+
+
+   ci-ui_ready-to-run:
+     start_when:
+       ci-ui_install-all-deps-and-tools passed:
+         script_key: ci-ui_install-all-deps-and-tools
+       ci-ui_check-database-config passed:
+         script_key: ci-ui_check-database-config
+      body: exit 0
+
 
