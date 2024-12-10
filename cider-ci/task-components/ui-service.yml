@@ -1,3 +1,9 @@
+
+template:
+  ui-database:
+    src: "{{CIDER_CI_TEST_UI_DIR}}/cider-ci/templates/database.yml"
+    test: "{{CIDER_CI_TEST_UI_DIR}}/config/database.yml"
+
 scripts:
   ci-ui_setup-ruby:
     exclusive_executor_resource: ui-ruby
@@ -12,4 +18,15 @@ scripts:
       ci-ui_setup-ruby passed:
         script_key: ci-ui_setup-ruby
     body: exit 0
+
+
+  ci-ui_check-database-config:
+    start_when:
+      ci-ui_install-all-deps-and-tools passed:
+        script_key: ci-ui_install-all-deps-and-tools
+    body: |
+      #!/usr/bin/env bash
+      set -eou pipefail
+      test -f $CIDER_CI_TEST_UI_DIR/config/database.yml
+      cat $CIDER_CI_TEST_UI_DIR/config/database.yml
 
