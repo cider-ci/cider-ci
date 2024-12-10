@@ -1,7 +1,7 @@
 templates:
   ui_database:
-    src: "{{CIDER_CI_TEST_UI_DIR}}/cider-ci/templates/database.yml"
-    dest: "{{CIDER_CI_TEST_UI_DIR}}/config/database.yml"
+    src: "user-interface/cider-ci/templates/database.yml"
+    dest: "user-interface/config/database.yml"
 
 scripts:
   ci-ui_setup-ruby:
