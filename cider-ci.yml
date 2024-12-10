@@ -41,7 +41,7 @@ jobs:
         include:
         - path: cider-ci/task-components/service.yml
           submodule: ['server']
-        - path: cider-ci/task-components/ui-service.yml
+        # - path: cider-ci/task-components/ui-service.yml
         # - path: cider-ci/task-components/services.yml
         git_options:
           submodules:
