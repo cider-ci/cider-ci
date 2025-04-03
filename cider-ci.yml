@@ -1,67 +1,149 @@
 jobs:
 
-  integration-tests_hot-spots:
-    name: Hot Spots
-    run_when: &RUN_WHEN_DEFAULTS
-      any branch matches:
+  integration-tests-preflight:
+    name: Preflight Integration Tests
+    run_when:
+      any branch has been updated:
         type: branch
         include_match: ^.*$
-    priority: 1
+    priority: 10
     context:
-      include:
-      - path: cider-ci/contexts/hot-spots.yml
-        submodule: ['integration-tests']
       task_defaults:
         priority: 10
-        #traits:
-        #  g2016: true
-        max_trials: 5
-        eager_trials: 5
-      generate_tasks:
-        include_match: ^.*NOTING.*$
-        submodule: [integration-tests]
-#      tasks:
-#        spec/features/branch-triggers_demo-repo_spec.rb:
-#          environment_variables:
-#            CIDER_CI_TASK_FILE: spec/features/branch-triggers_demo-repo_spec.rb:35
+        include: cider-ci/task-components/integration-test.yml
+      tasks:
+        task_wip:
+          scripts:
+            test:
+              body: |
+                #!/usr/bin/env bash
+                set -eou pipefail
+                echo "OK"
+
+  integration-tests-one:
+    name: Integration Test One
+    depends_on: &INT_SPEC_DEPENDS
+      specs preflight passed:
+        type: job
+        job_key: integration-tests-preflight
+        states: [passed]
+    run_when: *INT_SPEC_DEPENDS
+    priority: 10
+    context:
+      task_defaults:
+        priority: 10
+        include: cider-ci/task-components/integration-test.yml
+      tasks:
+        task_wip:
+          scripts:
+            test:
+              timeout: 300 seconds
+              body: |
+                #!/usr/bin/env bash
+                set -eou pipefail
+
+                # DEBUG:
+                # set -x
+                # env | sort
+
+                cd integration-tests
+
+                mkdir -p log
+                xvfb-run -a -e log/xvfb.log --server-args='-screen 0 1920x1080x24' \
+                  ./bin/rspec spec/features/public-page_spec.rb
+
+  integration-tests-hot-spots:
+    name: Integration Tests - Hot Spots
+    depends_on: &INT_HS_SPEC_DEPENDS
+      specs preflight passed:
+        type: job
+        job_key: integration-tests-preflight
+        states: [passed]
+    run_when: *INT_HS_SPEC_DEPENDS
+    context:
+      task_defaults:
+        include: cider-ci/task-components/integration-test.yml
+        scripts:
+          test:
+            timeout: 300 seconds
+            body: |
+              #!/usr/bin/env bash
+              set -eou pipefail
+
+              # DEBUG:
+              # set -x
+              # env | sort
+
+              cd integration-tests
+
+              mkdir -p log
+              xvfb-run -a -e log/xvfb.log --server-args='-screen 0 1920x1080x24' \
+                ./bin/rspec "${FEATURE}"
+
+      tasks:
+        include:
+          - path: cider-ci/generators/hot-spot-tasks.yml
+            submodule: ['integration-tests']
+
+
+
 
   integration-tests:
     name: Integration Tests
-    run_when:
-      hot-spots-finished:
+    depends_on: &INT_SPEC_DEPENDS
+      specs preflight passed:
         type: job
-        job_key: integration-tests_hot-spots
-        states: [passed,failed]
-    context:
-      include:
-      - path: cider-ci/contexts/integration-tests.yml
-        submodule: ['integration-tests']
-      task_defaults: {}
-      # traits:
-      #    g2016: true
-
-  build:
-    name: Build the Cider-CI Archive
-    run_when:
-      'integration-tests passed':
-        type: job
-        job_key: integration-tests
+        job_key: integration-tests-preflight
         states: [passed]
+    # run_when: *INT_SPEC_DEPENDS
     context:
-      include:
-      - path: cider-ci/contexts/build.yml
-        submodule: ['deploy']
+      task_defaults:
+        include: cider-ci/task-components/integration-test.yml
+        scripts:
+          test:
+            timeout: 300 seconds
+            body: |
+              #!/usr/bin/env bash
+              set -eou pipefail
 
-  test-container-deploy:
-    run_when:
-      'build passed':
-        type: job
-        job_key: build
-        states: [passed]
-    depends_on:
-      build: {job_key: build,   type: job, states: [passed]}
-    name: Test Deploy to a Container
-    context:
-      include:
-        - path: container-test/cider-ci/context.yml
-          submodule: [deploy]
+              # DEBUG:
+              # set -x
+              # env | sort
+
+              cd integration-tests
+
+              mkdir -p log
+              xvfb-run -a -e log/xvfb.log --server-args='-screen 0 1920x1080x24' \
+                ./bin/rspec "${FEATURE}"
+
+      tasks:
+        include:
+          - path: cider-ci/generators/feature-tasks.yml
+            submodule: ['integration-tests']
+
+
+# build:
+#   name: Build the Cider-CI Archive
+#   run_when:
+#     'integration-tests passed':
+#       type: job
+#       job_key: integration-tests
+#       states: [passed]
+#   context:
+#     include:
+#     - path: cider-ci/contexts/build.yml
+#       submodule: ['deploy']
+
+# test-container-deploy:
+#   run_when:
+#     'build passed':
+#       type: job
+#       job_key: build
+#       states: [passed]
+#   depends_on:
+#     build: {job_key: build,   type: job, states: [passed]}
+#   name: Test Deploy to a Container
+#   context:
+#     include:
+#       - path: container-test/cider-ci/context.yml
+#         submodule: [deploy]

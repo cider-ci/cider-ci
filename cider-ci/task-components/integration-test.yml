@@ -1,0 +1,43 @@
+environment_variables:
+  CIDER_CI_TEST_SERVER_DIR: '{{CIDER_CI_WORKING_DIR}}/server'
+  CIDER_CI_TEST_UI_DIR: '{{CIDER_CI_WORKING_DIR}}/user-interface'
+include:
+- path: cider-ci/task-components/service.yml
+  submodule: ['server']
+- path: cider-ci/task-components/executor-service.yml
+  submodule: ['server']
+- path: cider-ci/task-components/ui-service.yml
+- path: cider-ci/task-components/services.yml
+- path: cider-ci/task-components/reverse-proxy.yml
+  submodule: ['integration-tests']
+
+git_options:
+  submodules:
+    include_match: ^.*$
+
+traits:
+  - asdf
+
+scripts:
+
+  reverse-proxy-run:
+    start_when:
+      services_ready_to_run passed:
+        script_key: services_ready_to_run
+
+  services_ready_to_run:
+    start_when:
+      ci-executor_ready-to-run passed:
+        script_key: ci-executor_ready-to-run
+
+  ci-executor_run:
+    start_when:
+      services_ready_to_run passed:
+        script_key: services_ready_to_run
+
+
+
+trial_attachments:
+  screenshots:
+    include_match: 'integration-tests\/tmp\/.+\.png$'
+    content_type: image/png
